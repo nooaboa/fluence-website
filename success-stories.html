@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Success Stories — Fluence Agency</title>
-  <meta name="description" content="Real results from agency owners who replaced manual work with automation systems built by Fluence." />
+  <meta name="description" content="Real results from founders who replaced manual work with automation systems built by Fluence." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/1a991b240e707c46ca904d731893f108?family=Neue+Montreal+Bold" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/consent-defaults.js"></script>
   <style>
     .case-studies-list {
       display: flex;
@@ -584,13 +585,19 @@
         <h4>Legal</h4>
         <ul>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="impressum.html">Imprint</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Fluence Agency. All rights reserved.</span>
-      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="impressum.html">Impressum</a></span>
+      <span>
+        <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="cookie-policy.html">Cookie Policy</a> &nbsp;·&nbsp;
+        <a href="impressum.html">Imprint</a> &nbsp;·&nbsp;
+        <button type="button" class="cookie-settings-link" data-cookie-settings>Cookie settings</button>
+      </span>
     </div>
   </div>
 </footer>
@@ -653,5 +660,6 @@
     });
   })();
 </script>
+<script src="js/cookie-consent.js" defer></script>
 </body>
 </html>

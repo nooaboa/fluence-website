@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book a Call — Fluence Agency</title>
-  <meta name="description" content="Book a free 30-minute strategy call with Fluence. We'll map out exactly where your agency is losing time and what we'd build to fix it." />
+  <meta name="description" content="Book a free 30-minute strategy call with Fluence. We'll map out exactly where your business is losing time and what we'd build to fix it." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/1a991b240e707c46ca904d731893f108?family=Neue+Montreal+Bold" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/consent-defaults.js"></script>
   <style>
     .contact-layout {
       display: grid;
@@ -161,16 +162,16 @@
       <!-- Sidebar -->
       <div class="contact-sidebar fade-up">
         <div class="eyebrow">Free Strategy Call</div>
-        <h1>Let's talk about your agency.</h1>
+        <h1>Let's talk about your business.</h1>
         <p class="lead">
-          Pick a time that works for you. It's 30 minutes, no obligations — just an honest conversation about where your agency is and what's possible with automation.
+          Pick a time that works for you. It's 30 minutes, no obligations — just an honest conversation about where your business is and what's possible with automation.
         </p>
 
         <div class="what-to-expect">
           <h4>What happens on the call</h4>
           <div class="expect-item">
             <div class="expect-num">1</div>
-            <p>We learn about your agency — your current tools, your biggest bottlenecks, and what's eating your time.</p>
+            <p>We learn about your business — your current tools, your biggest bottlenecks, and what's eating your time.</p>
           </div>
           <div class="expect-item">
             <div class="expect-num">2</div>
@@ -197,7 +198,7 @@
 
         <div style="margin-top: 28px; padding: 20px; background: var(--green-dim); border: 1px solid rgba(55,202,55,0.2); border-radius: var(--r);">
           <p style="font-size: 0.85rem; color: var(--text-2);">
-            <strong style="color: var(--green);">No prep needed.</strong> Just show up and tell us how your agency works. We'll handle the rest.
+            <strong style="color: var(--green);">No prep needed.</strong> Just show up and tell us how your business works. We'll handle the rest.
           </p>
         </div>
       </div>
@@ -222,7 +223,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
-        <p>Automation systems for agency owners who want to grow without burning out.</p>
+        <p>Automation systems for founders who want to grow without burning out.</p>
       </div>
       <div class="footer-col">
         <h4>Pages</h4>
@@ -245,13 +246,19 @@
         <h4>Legal</h4>
         <ul>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="impressum.html">Imprint</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Fluence Agency. All rights reserved.</span>
-      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="impressum.html">Impressum</a></span>
+      <span>
+        <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="cookie-policy.html">Cookie Policy</a> &nbsp;·&nbsp;
+        <a href="impressum.html">Imprint</a> &nbsp;·&nbsp;
+        <button type="button" class="cookie-settings-link" data-cookie-settings>Cookie settings</button>
+      </span>
     </div>
   </div>
 </footer>
@@ -266,5 +273,6 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
+<script src="js/cookie-consent.js" defer></script>
 </body>
 </html>
