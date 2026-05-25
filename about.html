@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Fluence Agency</title>
+  <meta name="description" content="Fluence is an automation agency founded by Nooaa Adams. We help agency owners reclaim their time and scale their revenue through intelligent automation systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://db.onlinewebfonts.com/c/1a991b240e707c46ca904d731893f108?family=Neue+Montreal+Bold" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .founder-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+      align-items: start;
+      padding: 48px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      box-shadow: 0 1px 4px rgba(20,20,18,0.05);
+    }
+
+    .founder-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: var(--r-lg);
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .founder-photo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-3);
+    }
+
+    .founder-photo-placeholder svg { width: 48px; height: 48px; }
+    .founder-photo-placeholder span { font-size: 0.82rem; }
+
+    .founder-info .name {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .founder-info .title {
+      font-size: 0.9rem;
+      color: var(--green);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .founder-info p {
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .value-card {
+      padding: 32px 28px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 1px 3px rgba(20,20,18,0.04);
+      transition: all 0.25s var(--ease);
+    }
+
+    .value-card:hover {
+      background: #fff;
+      border-color: var(--border-hover);
+      box-shadow: 0 4px 16px rgba(20,20,18,0.07);
+    }
+
+    .value-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin-bottom: 12px;
+      opacity: 0.4;
+    }
+
+    .value-card h3 { margin-bottom: 10px; font-size: 1.05rem; }
+    .value-card p { font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .founder-card { grid-template-columns: 1fr; gap: 32px; }
+      .founder-photo { width: 140px; height: 140px; aspect-ratio: unset; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="menuClose">×</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="success-stories.html">Success Stories</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary" style="margin-top:16px;">Book a Call</a>
+</div>
+
+<!-- ── Page Hero ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="container">
+    <div class="eyebrow fade-up" style="justify-content:center;">About the Agency</div>
+    <h1 class="fade-up delay-1">We believe agencies<br>shouldn't run on manual work.</h1>
+    <p class="fade-up delay-2">Fluence was built to give agency owners their time back, and a system that actually scales with them.</p>
+  </div>
+</section>
+
+<!-- ── Mission ───────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="fade-up">
+        <div class="eyebrow">Our Mission</div>
+        <h2>Scale revenue.<br>Not workload.</h2>
+        <p style="margin-bottom: 1.2rem;">
+          Too many talented agency owners are stuck doing the same manual tasks every day — chasing leads, sending follow-ups, onboarding clients one by one. Not because they lack ambition, but because they never built the systems to replace themselves in those roles.
+        </p>
+        <p>
+          Fluence exists to fix that. We design and build the automation infrastructure that lets your agency grow without everything falling on you personally.
+        </p>
+      </div>
+      <div class="fade-up delay-2">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="card" style="padding: 28px;">
+            <div class="stat-number" style="font-size: 2rem; margin-bottom: 6px;">Agency-<span>first</span></div>
+            <p style="font-size: 0.9rem;">We only work with agencies — we understand the exact pressures, tools, and chaos that comes with running one.</p>
+          </div>
+          <div class="card" style="padding: 28px;">
+            <div class="stat-number" style="font-size: 2rem; margin-bottom: 6px;">Outcome-<span>driven</span></div>
+            <p style="font-size: 0.9rem;">Our success is measured in hours saved and revenue gained — not systems built or features shipped.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Founder ────────────────────────────────────────────── -->
+<section class="section" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">The Founder</div>
+      <h2>Built by someone who's been in the trenches.</h2>
+    </div>
+
+    <div class="founder-card fade-up delay-1">
+      <div class="founder-photo">
+        <div class="founder-photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="founder-info">
+        <div class="name">Nooaa Adams</div>
+        <div class="title">Founder, Fluence Agency</div>
+        <p>
+          I started Fluence after watching agency after agency struggle with the same problem: brilliant people stuck doing work that software should be doing for them.
+        </p>
+        <p>
+          Leads were going cold. Onboarding was taking days. Calendars were empty because no one had time to follow up. The businesses were great — the systems were broken.
+        </p>
+        <p>
+          So I started building the automations myself. And the results were immediate — hours back every week, more leads converted, and founders finally able to focus on the work they actually love.
+        </p>
+        <p>
+          Today, Fluence is my full focus. I work with agency owners to design and build the systems that turn their operations from reactive and manual to proactive and automatic.
+        </p>
+        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary">Work With Me
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="success-stories.html" class="btn btn-ghost">See Results</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Values ─────────────────────────────────────────────── -->
+<section class="section" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">What We Stand For</div>
+      <h2>The principles that shape how we work.</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card fade-up delay-1">
+        <div class="value-number">01</div>
+        <h3>Clarity over complexity</h3>
+        <p>Good automation is invisible. If a system requires constant explanation or maintenance, it's not built right. We build things that just work.</p>
+      </div>
+      <div class="value-card fade-up delay-2">
+        <div class="value-number">02</div>
+        <h3>Honesty first</h3>
+        <p>We won't build something for the sake of billing hours. If automation can't meaningfully help your agency, we'll tell you that on the first call.</p>
+      </div>
+      <div class="value-card fade-up delay-3">
+        <div class="value-number">03</div>
+        <h3>Speed with care</h3>
+        <p>Thirty days is fast. But we don't cut corners. Every system is tested, reviewed, and only launched when it's ready to perform reliably.</p>
+      </div>
+      <div class="value-card fade-up delay-1">
+        <div class="value-number">04</div>
+        <h3>Your tools, your rules</h3>
+        <p>We don't force you onto new platforms. We build in your existing stack — GoHighLevel, Zapier, Make, Notion, whatever you already use.</p>
+      </div>
+      <div class="value-card fade-up delay-2">
+        <div class="value-number">05</div>
+        <h3>Results, not reports</h3>
+        <p>We don't measure success by the number of automations built. We measure it by how many hours you've saved and how many more clients you've closed.</p>
+      </div>
+      <div class="value-card fade-up delay-3">
+        <div class="value-number">06</div>
+        <h3>Long-term thinking</h3>
+        <p>Systems that work today should still work as you scale. We build with growth in mind, so your automation doesn't become a bottleneck later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── What We Use ────────────────────────────────────────── -->
+<section class="section" style="border-top: 1px solid var(--border); background: var(--bg-3);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">The Stack</div>
+      <h2>Tools we work with.</h2>
+      <p>We build in your ecosystem — no forced migrations, no new tools to learn.</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;" class="fade-up delay-1">
+      {["GoHighLevel", "Zapier", "Make (Integromat)", "HubSpot", "Notion", "Slack", "Google Workspace", "Airtable", "ActiveCampaign", "Calendly", "Stripe", "Typeform"].map(tool => `
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">${tool}</div>
+      `).join('')}
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;" class="fade-up delay-1">
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">GoHighLevel</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Zapier</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Make (Integromat)</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">HubSpot</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Notion</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Slack</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Google Workspace</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Airtable</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">ActiveCampaign</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Calendly</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Stripe</div>
+      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">Typeform</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="cta-block fade-up">
+      <div class="eyebrow" style="justify-content:center;">Ready to start?</div>
+      <h2>Let's talk about your agency.</h2>
+      <p>A 30-minute strategy call is all it takes to understand your situation and map out exactly what we'd build for you.</p>
+      <a href="contact.html" class="btn btn-primary">Book a Free Strategy Call
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+        <p>Automation systems for agency owners who want to grow without burning out.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="success-stories.html">Success Stories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html">Lead Management</a></li>
+          <li><a href="index.html">Sales Automation</a></li>
+          <li><a href="index.html">Admin Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluence Agency. All rights reserved.</span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="impressum.html">Impressum</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobileMenu').classList.add('open'); });
+  document.getElementById('menuClose').addEventListener('click', () => { document.getElementById('mobileMenu').classList.remove('open'); });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

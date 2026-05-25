@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Call — Fluence Agency</title>
+  <meta name="description" content="Book a free 30-minute strategy call with Fluence. We'll map out exactly where your agency is losing time and what we'd build to fix it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://db.onlinewebfonts.com/c/1a991b240e707c46ca904d731893f108?family=Neue+Montreal+Bold" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+    }
+
+    .contact-sidebar h1 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 14px;
+    }
+
+    .contact-sidebar .lead {
+      font-size: 1rem;
+      color: var(--text-2);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .what-to-expect {
+      margin-bottom: 36px;
+    }
+
+    .what-to-expect h4 {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 16px;
+    }
+
+    .expect-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .expect-item:last-child { border-bottom: none; }
+
+    .expect-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--green-dim);
+      border: 1px solid rgba(55,202,55,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .expect-item p {
+      font-size: 0.88rem;
+      color: var(--text-2);
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-2);
+      padding: 6px 0;
+    }
+
+    .contact-detail svg {
+      width: 16px;
+      height: 16px;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .contact-detail a { color: var(--green); }
+    .contact-detail a:hover { text-decoration: underline; }
+
+    .cal-wrapper {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-2);
+    }
+
+    .cal-wrapper iframe {
+      width: 100%;
+      min-height: 820px;
+      border: none;
+      display: block;
+    }
+
+    @media (max-width: 1024px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+      .contact-sidebar {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="menuClose">×</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="success-stories.html">Success Stories</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary" style="margin-top:16px;">Book a Call</a>
+</div>
+
+<!-- ── Contact Section ────────────────────────────────────── -->
+<section style="padding: calc(var(--nav-h) + 64px) 0 100px;">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Sidebar -->
+      <div class="contact-sidebar fade-up">
+        <div class="eyebrow">Free Strategy Call</div>
+        <h1>Let's talk about your agency.</h1>
+        <p class="lead">
+          Pick a time that works for you. It's 30 minutes, no obligations — just an honest conversation about where your agency is and what's possible with automation.
+        </p>
+
+        <div class="what-to-expect">
+          <h4>What happens on the call</h4>
+          <div class="expect-item">
+            <div class="expect-num">1</div>
+            <p>We learn about your agency — your current tools, your biggest bottlenecks, and what's eating your time.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-num">2</div>
+            <p>We walk through which automations would have the highest impact for your specific situation.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-num">3</div>
+            <p>If it's a fit, we outline a proposal. If it's not, we'll tell you honestly — no pressure, no sales tactics.</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          30 minutes
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l-4 4l-4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          Video call (Google Meet / Zoom)
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:nooaa@fluence-agency.com">nooaa@fluence-agency.com</a>
+        </div>
+
+        <div style="margin-top: 28px; padding: 20px; background: var(--green-dim); border: 1px solid rgba(55,202,55,0.2); border-radius: var(--r);">
+          <p style="font-size: 0.85rem; color: var(--text-2);">
+            <strong style="color: var(--green);">No prep needed.</strong> Just show up and tell us how your agency works. We'll handle the rest.
+          </p>
+        </div>
+      </div>
+
+      <!-- Cal.com Embed -->
+      <div class="cal-wrapper fade-up delay-2">
+        <!-- Replace the src URL with your actual Cal.com booking link -->
+        <iframe
+          src="https://cal.com/nooaadams/strategy?embed=true&theme=dark&hideEventTypeDetails=false"
+          title="Book a strategy call with Nooaa Adams"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+        <p>Automation systems for agency owners who want to grow without burning out.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="success-stories.html">Success Stories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html">Lead Management</a></li>
+          <li><a href="index.html">Sales Automation</a></li>
+          <li><a href="index.html">Admin Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluence Agency. All rights reserved.</span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="impressum.html">Impressum</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobileMenu').classList.add('open'); });
+  document.getElementById('menuClose').addEventListener('click', () => { document.getElementById('mobileMenu').classList.remove('open'); });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

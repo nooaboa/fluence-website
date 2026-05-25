@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluence · Automation &amp; AI Systems</title>
+  <meta name="description" content="Fluence is a Vienna automation and AI studio. We build the workflows, agents and dashboards that let founder-led teams do more without hiring more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://db.onlinewebfonts.com/c/1a991b240e707c46ca904d731893f108?family=Neue+Montreal+Bold" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- Scroll-drawn flow connector -->
+<div id="flow-connector" aria-hidden="true">
+  <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path id="flow-path"></path></svg>
+  <div id="flow-nodes"></div>
+</div>
+
+<!-- ── Navigation ────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="success-stories.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a call
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="menuClose">×</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="success-stories.html">Work</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary" style="margin-top:16px;">Book a call</a>
+</div>
+
+<!-- ── Hero ──────────────────────────────────────────────── -->
+<section class="hero">
+  <!-- interactive blob mesh -->
+  <div class="hero-mesh" id="heroMesh" aria-hidden="true">
+    <div class="blob-wrap blob-wrap-1"><div class="blob blob-1"></div></div>
+    <div class="blob-wrap blob-wrap-2"><div class="blob blob-2"></div></div>
+    <div class="blob-wrap blob-wrap-3"><div class="blob blob-3"></div></div>
+    <div class="blob-wrap blob-wrap-4"><div class="blob blob-4"></div></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="fade-up">
+        Do more.<br>
+        <span class="hl">
+          <span class="accent">Without hiring more.</span>
+          <svg class="hl-underline" viewBox="0 0 520 24" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M7 16 Q 130 3 255 12 Q 380 21 513 9"/>
+          </svg>
+        </span>
+      </h1>
+      <p class="lead fade-up delay-1">
+        Fluence builds custom automation, AI agents and operating systems for founder-led businesses and growing teams. The connectors, the agents, the dashboards: handled, so you stay on the work only you can do.
+      </p>
+      <div class="hero-ctas fade-up delay-2">
+        <a href="contact.html" class="btn btn-primary" data-magnetic>Book a discovery call
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="success-stories.html" class="btn btn-ghost">See the work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats Bar ──────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-number"><span data-count="30">30</span><span>+</span></div>
+        <div class="stat-label">Systems shipped</div>
+      </div>
+      <div class="stat-item fade-up delay-1">
+        <div class="stat-number"><span data-count="10">10</span><span>h+</span></div>
+        <div class="stat-label">Saved weekly at Kontext</div>
+      </div>
+      <div class="stat-item fade-up delay-2">
+        <div class="stat-number"><span>24</span><span>/7</span></div>
+        <div class="stat-label">Always-on systems</div>
+      </div>
+      <div class="stat-item fade-up delay-3">
+        <div class="stat-number"><span data-count="100">100</span><span>%</span></div>
+        <div class="stat-label">Documented &amp; handed off</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Services ───────────────────────────────────────────── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">What We Build</div>
+      <h2>Four ways we take work off your plate.</h2>
+      <p>We are not a marketing agency. We build the backend systems that make a business run, then document them and hand them over.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Workflow Automation -->
+      <div class="card fade-up delay-1">
+        <div class="card-num">01</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/>
+            <path d="M9 6h6a3 3 0 0 1 3 3v6"/><path d="M9 6v0"/>
+          </svg>
+        </div>
+        <h3>Workflow Automation</h3>
+        <p>Custom n8n workflows that connect the tools you already use, so repetitive work runs itself.</p>
+        <ul class="checklist" style="margin-top:20px;">
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>CRM sync &amp; lead routing</p></li>
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Automated follow-up sequences</p></li>
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Data pipelines &amp; notifications</p></li>
+        </ul>
+      </div>
+
+      <!-- AI Agents -->
+      <div class="card fade-up delay-2">
+        <div class="card-num">02</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v3"/><rect x="5" y="6" width="14" height="12" rx="3"/>
+            <circle cx="9.5" cy="12" r="1.4"/><circle cx="14.5" cy="12" r="1.4"/>
+            <path d="M3 11v3M21 11v3"/>
+          </svg>
+        </div>
+        <h3>AI Agents</h3>
+        <p>Agents that handle real work: answering queries, triaging requests and taking action inside your systems.</p>
+        <ul class="checklist" style="margin-top:20px;">
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Knowledge-base support agents</p></li>
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Request triage &amp; processing</p></li>
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Built on Claude, Pinecone &amp; RAG</p></li>
+        </ul>
+      </div>
+
+      <!-- Notion Operating Systems -->
+      <div class="card fade-up delay-3">
+        <div class="card-num">03</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/>
+            <rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/>
+          </svg>
+        </div>
+        <h3>Notion Operating Systems</h3>
+        <p>Structured workspaces that give you visibility and control, kept current automatically.</p>
+        <ul class="checklist" style="margin-top:20px;">
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Project &amp; CRM dashboards</p></li>
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Content &amp; pipeline tracking</p></li>
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Live data, no manual updates</p></li>
+        </ul>
+      </div>
+
+      <!-- System Integrations -->
+      <div class="card fade-up delay-4">
+        <div class="card-num">04</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12h6"/><path d="M8 8a4 4 0 0 0 0 8h1"/><path d="M16 8a4 4 0 0 1 0 8h-1"/>
+          </svg>
+        </div>
+        <h3>System Integrations</h3>
+        <p>Connecting tools that do not talk to each other, so data moves on its own instead of through your inbox.</p>
+        <ul class="checklist" style="margin-top:20px;">
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>CRM, payments &amp; project tools</p></li>
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Community &amp; onboarding flows</p></li>
+          <li class="checklist-item"><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div><p>Zero manual data entry</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="flow-divider" aria-hidden="true">
+  <span class="fd-line"></span><span class="fd-node"></span><span class="fd-line"></span>
+</div>
+
+<!-- ── Who it's for ───────────────────────────────────────── -->
+<section class="section" id="icp">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow orange">Who It's For</div>
+      <h2>Built for teams who want<br>output, not overhead.</h2>
+      <p>Three kinds of business hit the same wall: more demand than hours. Here is how that looks.</p>
+    </div>
+
+    <div class="icp-grid">
+      <div class="icp-card fade-up delay-1">
+        <div class="icp-tag">Creator-Founders</div>
+        <div class="icp-name">Doing €5k work with €50k potential.</div>
+        <div class="icp-pain">"Operations are eating my week. Onboarding, follow-ups, repurposing, DMs. I barely have time to create."</div>
+        <div class="icp-want"><strong>What they get</strong>Systems that run while they sleep. Less manual work, more time creating.</div>
+      </div>
+      <div class="icp-card fade-up delay-2">
+        <div class="icp-tag">Marketing Agencies</div>
+        <div class="icp-name">Senior staff stuck on busywork.</div>
+        <div class="icp-pain">"Reporting takes hours. Client onboarding is chaotic. We can't deliver more without hiring more."</div>
+        <div class="icp-want"><strong>What they get</strong>Fewer bottlenecks, faster delivery, systems that scale without headcount.</div>
+      </div>
+      <div class="icp-card fade-up delay-3">
+        <div class="icp-tag">Staffing &amp; HR</div>
+        <div class="icp-name">Answering the same 20 questions.</div>
+        <div class="icp-pain">"Ops staff field the same queries on repeat, and data gets moved between systems by hand."</div>
+        <div class="icp-want"><strong>What they get</strong>Automated query handling, faster onboarding, clean integrations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How it Works ───────────────────────────────────────── -->
+<section class="section" id="process" style="background: var(--bg-3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">The Process</div>
+      <h2>We build it, document it,<br>and hand it over.</h2>
+      <p>Operational within weeks, not quarters. You work directly with the founder the whole way through.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step fade-up delay-1">
+        <div class="step-number">01</div>
+        <h3>Scope</h3>
+        <p>We map your operations and scope to the outcome: what hours get saved, what process disappears, what revenue gets unlocked.</p>
+      </div>
+      <div class="step fade-up delay-2">
+        <div class="step-number">02</div>
+        <h3>Build</h3>
+        <p>We build the system to spec and test it against your real workflows, with you in the loop but the heavy lifting on us.</p>
+      </div>
+      <div class="step fade-up delay-3">
+        <div class="step-number">03</div>
+        <h3>Hand Off</h3>
+        <p>You get the system with full documentation and SOPs, so your team can run it and understand exactly what it does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Case Study ─────────────────────────────────────────── -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow orange">Selected Work</div>
+      <h2>A support agent that gave<br>a team its week back.</h2>
+    </div>
+
+    <div class="case-feature fade-up delay-1">
+      <div class="case-feature-main">
+        <span class="case-tag">Kontext Entertainment · Internal AI Agent</span>
+        <h3>Senior staff were fielding the same internal questions all day.</h3>
+        <p>Processes, policies, how-tos: queries that did not need senior attention but still landed in their inbox and broke their focus.</p>
+        <p>We built a Telegram-based AI support agent on a custom knowledge base with Pinecone RAG. It answers staff queries instantly, 24/7, inside the tool the team already uses. No new software, no adoption curve.</p>
+        <div class="case-chips">
+          <span class="case-chip">Telegram</span>
+          <span class="case-chip">Pinecone RAG</span>
+          <span class="case-chip">Claude</span>
+          <span class="case-chip">Zero onboarding friction</span>
+        </div>
+      </div>
+      <div class="case-feature-side">
+        <div class="cs-big">10h+</div>
+        <div class="cs-label">saved every week</div>
+        <div class="cs-note">Staff get instant answers. The senior team is free of repetitive query handling, for good.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;" class="fade-up">
+      <a href="success-stories.html" class="btn btn-ghost">See all work
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="flow-divider" aria-hidden="true">
+  <span class="fd-line"></span><span class="fd-node"></span><span class="fd-line"></span>
+</div>
+
+<!-- ── Why Fluence ────────────────────────────────────────── -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="split">
+      <div class="fade-up">
+        <div class="eyebrow">Why Fluence</div>
+        <h2>A lean studio.<br>Built like operators.</h2>
+        <p style="margin-bottom: 2rem;">Fluence runs as a lean, expert-driven shop. You work directly with Nooa, the person who builds your system, with no account managers in between. We use the same automations we build for clients, so we know what actually holds up.</p>
+        <a href="about.html" class="btn btn-ghost">More about Fluence
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="features-grid fade-up delay-2">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+          </div>
+          <div>
+            <h4>Build, document, hand off</h4>
+            <p>Every system ships with SOPs so your team can maintain it.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <h4>Direct founder access</h4>
+            <p>You work with the person who builds it, not a middleman.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <div>
+            <h4>Outcome-focused scoping</h4>
+            <p>We scope to hours saved, not to the size of a retainer.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
+          </div>
+          <div>
+            <h4>Stack-agnostic</h4>
+            <p>We integrate with what you use instead of forcing a switch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="section" id="cta">
+  <div class="container">
+    <div class="cta-block fade-up">
+      <div class="eyebrow">Let's Talk</div>
+      <h2>Let's talk about your systems.</h2>
+      <p>Book a free discovery call. Thirty minutes, no pitch, just a straight read on what is worth automating in your business.</p>
+      <a href="contact.html" class="btn btn-primary" data-magnetic>Book a discovery call
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+        <p>A Vienna automation and AI studio. We build the systems that let founder-led teams do more without hiring more.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="success-stories.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Workflow Automation</a></li>
+          <li><a href="index.html#services">AI Agents</a></li>
+          <li><a href="index.html#services">Notion Systems</a></li>
+          <li><a href="index.html#services">Integrations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluence. All rights reserved.</span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="impressum.html">Impressum</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Nav scroll effect + progress bar ──
+  const nav = document.getElementById('nav');
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (docH > 0 ? (window.scrollY / docH) * 100 : 0) + '%';
+  }, { passive: true });
+
+  // ── Mobile menu ──
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('open');
+  });
+  document.getElementById('menuClose').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+
+  // ── Count-up ──
+  function countUp(el) {
+    const target = parseFloat(el.dataset.count);
+    const dur = 1500, t0 = performance.now();
+    function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // ── Scroll reveal ──
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('[data-count]').forEach(countUp);
+      revealObs.unobserve(e.target);
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up, .flow-divider').forEach(el => revealObs.observe(el));
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── Blob cursor avoidance ──
+  const blobWraps = [...document.querySelectorAll('.blob-wrap')];
+  const FLEE_RADIUS = 300, FLEE_FORCE = 84;
+  let mouseX = -9999, mouseY = -9999, queued = false;
+
+  function updateBlobs() {
+    queued = false;
+    blobWraps.forEach(wrap => {
+      const r = wrap.getBoundingClientRect();
+      const dx = (r.left + r.width / 2) - mouseX;
+      const dy = (r.top + r.height / 2) - mouseY;
+      const dist = Math.hypot(dx, dy);
+      const blob = wrap.firstElementChild;
+      if (!blob) return;
+      if (dist < FLEE_RADIUS && dist > 0.01) {
+        const eased = Math.pow(1 - dist / FLEE_RADIUS, 2);
+        blob.style.setProperty('--px', (dx / dist) * eased * FLEE_FORCE + 'px');
+        blob.style.setProperty('--py', (dy / dist) * eased * FLEE_FORCE + 'px');
+      } else {
+        blob.style.setProperty('--px', '0px');
+        blob.style.setProperty('--py', '0px');
+      }
+    });
+  }
+  if (!reduced) {
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      if (!queued) { queued = true; requestAnimationFrame(updateBlobs); }
+    }, { passive: true });
+  }
+
+  // ── Hero mesh parallax ──
+  const heroMesh = document.getElementById('heroMesh');
+  if (heroMesh && !reduced) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < 900) heroMesh.style.transform = 'translateY(' + (y * 0.16) + 'px)';
+    }, { passive: true });
+  }
+
+  // ── Magnetic buttons ──
+  if (!reduced) {
+    document.querySelectorAll('[data-magnetic]').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width / 2;
+        const y = e.clientY - r.top - r.height / 2;
+        btn.style.transform = 'translate(' + (x * 0.22) + 'px,' + (y * 0.34 - 2) + 'px)';
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  // ── Scroll-drawn flow connector ──
+  (function () {
+    const connector = document.getElementById('flow-connector');
+    if (!connector) return;
+    const svg = connector.querySelector('svg');
+    const path = document.getElementById('flow-path');
+    const nodesWrap = document.getElementById('flow-nodes');
+    let nodeEls = [], nodeYs = [], built = false;
+
+    const ANCHORS = [
+      { sel: '#services',     f: 0.13, side: -1, node: true },
+      { sel: '.flow-divider', idx: 0, f: 0.5,  side: 0,  node: false },
+      { sel: '#icp',          f: 0.15, side: 1,  node: true },
+      { sel: '#process',      f: 0.15, side: -1, node: true },
+      { sel: '#work',         f: 0.15, side: 1,  node: true },
+      { sel: '.flow-divider', idx: 1, f: 0.5,  side: 0,  node: false },
+      { sel: '#why',          f: 0.42, side: -1, node: true },
+      { sel: '#cta',          f: 0.24, side: 0,  node: true, end: true }
+    ];
+
+    function getPts() {
+      const W = document.documentElement.clientWidth;
+      const cx = W / 2;
+      const amp = Math.max(120, Math.min(260, W * 0.5 - 280));
+      const pts = [];
+      ANCHORS.forEach(a => {
+        const el = a.idx != null
+          ? document.querySelectorAll(a.sel)[a.idx]
+          : document.querySelector(a.sel);
+        if (!el) return;
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        pts.push({
+          x: cx + a.side * amp,
+          y: top + el.offsetHeight * a.f,
+          node: a.node,
+          end: !!a.end
+        });
+      });
+      return pts;
+    }
+
+    function smoothPath(pts) {
+      if (pts.length < 2) return '';
+      let d = 'M ' + pts[0].x.toFixed(1) + ' ' + pts[0].y.toFixed(1);
+      for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[i - 1] || pts[i];
+        const p1 = pts[i], p2 = pts[i + 1];
+        const p3 = pts[i + 2] || p2;
+        const c1x = p1.x + (p2.x - p0.x) / 6, c1y = p1.y + (p2.y - p0.y) / 6;
+        const c2x = p2.x - (p3.x - p1.x) / 6, c2y = p2.y - (p3.y - p1.y) / 6;
+        d += ' C ' + c1x.toFixed(1) + ' ' + c1y.toFixed(1) + ', '
+                   + c2x.toFixed(1) + ' ' + c2y.toFixed(1) + ', '
+                   + p2.x.toFixed(1) + ' ' + p2.y.toFixed(1);
+      }
+      return d;
+    }
+
+    function build() {
+      if (window.innerWidth < 1024) { connector.style.display = 'none'; built = false; return; }
+      connector.style.display = '';
+      const pts = getPts();
+      if (pts.length < 2) return;
+      const W = document.documentElement.clientWidth;
+      const docH = document.documentElement.scrollHeight;
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + docH);
+      connector.style.height = docH + 'px';
+      path.setAttribute('d', smoothPath(pts));
+      nodesWrap.innerHTML = '';
+      nodeEls = []; nodeYs = [];
+      pts.forEach(p => {
+        if (!p.node) return;
+        const n = document.createElement('div');
+        n.className = 'flow-node' + (p.end ? ' flow-end' : '');
+        n.style.left = p.x + 'px';
+        n.style.top = p.y + 'px';
+        nodesWrap.appendChild(n);
+        nodeEls.push(n); nodeYs.push(p.y);
+      });
+      built = true;
+      update();
+    }
+
+    function update() {
+      if (!built) return;
+      const docH = document.documentElement.scrollHeight;
+      const head = window.scrollY + window.innerHeight * 0.8;
+      const pct = Math.max(0, Math.min(100, head / docH * 100));
+      const mask = 'linear-gradient(to bottom, #000 ' + pct + '%, rgba(0,0,0,0) '
+                 + Math.min(100, pct + 4) + '%)';
+      svg.style.maskImage = mask;
+      svg.style.webkitMaskImage = mask;
+      for (let i = 0; i < nodeEls.length; i++) {
+        nodeEls[i].classList.toggle('active', nodeYs[i] <= head);
+      }
+    }
+
+    let raf = false;
+    window.addEventListener('scroll', () => {
+      if (raf) return;
+      raf = true;
+      requestAnimationFrame(() => { raf = false; update(); });
+    }, { passive: true });
+
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 200); });
+    window.addEventListener('load', build);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+    build();
+  })();
+</script>
+</body>
+</html>

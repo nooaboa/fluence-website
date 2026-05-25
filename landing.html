@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluence — More Revenue. Less Manual Work.</title>
+  <meta name="description" content="Your agency could be generating more while you work less. Fluence builds automation systems that follow up leads, fill your calendar, and eliminate admin — in 30 days." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Landing-page specific overrides */
+    .lp-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      transition: all 0.3s var(--ease);
+    }
+    .lp-nav.scrolled {
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .lp-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-h);
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .lp-hero {
+      padding: calc(var(--nav-h) + 100px) 0 90px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .lp-hero-glow {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 600px;
+      background: radial-gradient(ellipse at 50% 30%, rgba(55,202,55,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .lp-hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      max-width: 860px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .lp-hero .lead {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: var(--text-2);
+      max-width: 600px;
+      margin: 0 auto 2.8rem;
+    }
+
+    /* Pain section dark red tint */
+    .pain-section {
+      background: rgba(180,30,30,0.04);
+      border-top: 1px solid rgba(255,80,80,0.08);
+      border-bottom: 1px solid rgba(255,80,80,0.08);
+    }
+
+    /* Guarantee block */
+    .guarantee {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 28px 32px;
+      background: var(--green-dim);
+      border: 1px solid rgba(55,202,55,0.25);
+      border-radius: var(--r-lg);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .guarantee-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(55,202,55,0.2);
+      border: 1px solid rgba(55,202,55,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .guarantee-icon svg { width: 20px; height: 20px; color: var(--green); }
+
+    .guarantee h4 { margin-bottom: 4px; font-size: 1rem; }
+    .guarantee p { font-size: 0.88rem; }
+
+    /* Big CTA section */
+    .lp-cta {
+      background: linear-gradient(180deg, rgba(55,202,55,0.06) 0%, transparent 100%);
+      border-top: 1px solid rgba(55,202,55,0.14);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .lp-cta h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 16px; }
+
+    .social-proof-avatars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-top: 24px;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      margin-left: -10px;
+      background: var(--bg-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-2);
+      flex-shrink: 0;
+    }
+
+    .avatar:first-child { margin-left: 0; }
+    .avatar.a1 { background: #1f3a1f; color: var(--green); }
+    .avatar.a2 { background: #1a1a2e; color: #188bf6; }
+    .avatar.a3 { background: #2a1a1a; color: #e87070; }
+    .avatar.a4 { background: #1a2a2a; color: #70c8e8; }
+
+    .social-proof-text {
+      margin-left: 16px;
+      font-size: 0.85rem;
+      color: var(--text-2);
+    }
+
+    .social-proof-text strong { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .lp-nav-inner { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Minimal Nav ────────────────────────────────────────── -->
+<nav class="lp-nav" id="lpNav">
+  <div class="lp-nav-inner">
+    <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+    <a href="#book" class="btn btn-primary">Book a Free Call
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────── -->
+<section class="lp-hero">
+  <div class="lp-hero-glow"></div>
+  <div class="container">
+    <div class="badge badge-green fade-up" style="margin-bottom: 1.4rem;">For Agency Owners</div>
+    <h1 class="fade-up delay-1">Your Agency Could Be<br><em style="color:var(--green);">Making More.</em><br>While You Work Less.</h1>
+    <p class="lead fade-up delay-2">
+      In 30 days, we build the automation system that follows up your leads, fills your calendar, and handles your admin — without you touching a single thing.
+    </p>
+    <div class="hero-ctas fade-up delay-3">
+      <a href="#book" class="btn btn-primary" style="font-size:1.05rem; padding: 16px 34px;">
+        Book Your Free Strategy Call
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+    <p class="hero-trust fade-up delay-4">No obligations &nbsp;·&nbsp; No tech skills needed &nbsp;·&nbsp; 30-minute call</p>
+
+    <!-- Social proof -->
+    <div class="social-proof-avatars fade-up delay-5">
+      <div class="avatar a1">MR</div>
+      <div class="avatar a2">SL</div>
+      <div class="avatar a3">KP</div>
+      <div class="avatar a4">TN</div>
+      <div class="social-proof-text"><strong>Agency owners</strong> already running on automation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ─────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-number">50<span>+</span></div>
+        <div class="stat-label">Systems built</div>
+      </div>
+      <div class="stat-item fade-up delay-1">
+        <div class="stat-number">15<span>h</span></div>
+        <div class="stat-label">Saved per week, avg.</div>
+      </div>
+      <div class="stat-item fade-up delay-2">
+        <div class="stat-number">30<span>d</span></div>
+        <div class="stat-label">To go live</div>
+      </div>
+      <div class="stat-item fade-up delay-3">
+        <div class="stat-number"><span>&lt;</span>5<span>m</span></div>
+        <div class="stat-label">Lead response time</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Problem ───────────────────────────────────────────── -->
+<section class="section pain-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow" style="color: #e07070;">The Problem</div>
+      <h2>Here's what's quietly costing<br>you time and money.</h2>
+      <p>You didn't start an agency to spend your days on admin. But here you are.</p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-item fade-up delay-1">
+        <div class="pain-icon">🕐</div>
+        <div>
+          <h4>Leads go cold</h4>
+          <p>New inquiries sit in your inbox for hours — sometimes days. By then, they've already booked someone else.</p>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-2">
+        <div class="pain-icon">🔁</div>
+        <div>
+          <h4>Manual repetition</h4>
+          <p>Copy-pasting, data entry, sending the same onboarding email for the fifteenth time. This is not what you built a business for.</p>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-3">
+        <div class="pain-icon">📉</div>
+        <div>
+          <h4>Can't scale without hiring</h4>
+          <p>Every new client means more work for you personally. The only way to grow feels like hiring — which costs more than it brings in.</p>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-4">
+        <div class="pain-icon">🧠</div>
+        <div>
+          <h4>No mental bandwidth left</h4>
+          <p>When the operational noise never stops, there's no space left to think about strategy, positioning, or what actually grows the business.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Transformation ─────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">The Shift</div>
+      <h2>What your agency looks like<br>with Fluence in place.</h2>
+    </div>
+
+    <div class="transform-grid fade-up delay-1">
+      <div class="transform-col before">
+        <h3>Before</h3>
+        <div class="transform-list">
+          <div class="transform-row">Leads sit unanswered for hours or days</div>
+          <div class="transform-row">You manually follow up with every prospect</div>
+          <div class="transform-row">Onboarding takes you half a day per client</div>
+          <div class="transform-row">Admin eats your mornings before you've started</div>
+          <div class="transform-row">Growth requires hiring more people</div>
+        </div>
+      </div>
+      <div class="transform-divider">
+        <div class="transform-arrow">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </div>
+      </div>
+      <div class="transform-col after">
+        <h3>After Fluence</h3>
+        <div class="transform-list">
+          <div class="transform-row">Every new lead gets contacted in under 5 minutes</div>
+          <div class="transform-row">Follow-up sequences run automatically, 24/7</div>
+          <div class="transform-row">Onboarding triggers the moment a contract is signed</div>
+          <div class="transform-row">Admin tasks complete themselves before you wake up</div>
+          <div class="transform-row">You scale revenue without scaling headcount</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services ───────────────────────────────────────────── -->
+<section class="section" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">What We Build</div>
+      <h2>Three systems. One agency<br>that finally runs itself.</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="card fade-up delay-1">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <h3>The Lead Machine</h3>
+        <p style="margin-bottom: 16px;">Never lose a lead again. From the moment someone shows interest, they're in an automated sequence that warms them, qualifies them, and books them on your calendar.</p>
+        <p style="font-size: 0.88rem; color: var(--green);">→ Avg. result: 3× more discovery calls</p>
+      </div>
+
+      <div class="card fade-up delay-2">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <h3>The Sales Engine</h3>
+        <p style="margin-bottom: 16px;">More calls booked, less chasing. Automated reminders, pre-call prep, post-call follow-ups, and payment collection — all running without you.</p>
+        <p style="font-size: 0.88rem; color: var(--green);">→ Avg. result: 40% fewer no-shows</p>
+      </div>
+
+      <div class="card fade-up delay-3">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <h3>The Freedom Stack</h3>
+        <p style="margin-bottom: 16px;">Your daily admin, automated. Onboarding, reporting, data entry, internal alerts — transformed from hours of manual work into instant, zero-touch workflows.</p>
+        <p style="font-size: 0.88rem; color: var(--green);">→ Avg. result: 15h saved per week</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ───────────────────────────────────────── -->
+<section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">How It Works</div>
+      <h2>Simple. Fast. No disruption.</h2>
+      <p>You don't need to change how you work or learn any new tools. We handle everything.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step fade-up delay-1">
+        <div class="step-number">01</div>
+        <h3>Book a 30-min call</h3>
+        <p>We learn about your agency — your current tools, your biggest time-sinks, and where you're losing leads. No prep needed on your end.</p>
+      </div>
+      <div class="step fade-up delay-2">
+        <div class="step-number">02</div>
+        <h3>We build your system</h3>
+        <p>Within 30 days, your automation system is live and tested. You approve everything before it goes live — no surprises.</p>
+      </div>
+      <div class="step fade-up delay-3">
+        <div class="step-number">03</div>
+        <h3>Watch it run</h3>
+        <p>Leads get followed up. Your calendar fills. Admin disappears. You focus on delivering great work and growing your agency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Common Questions</div>
+      <h2>Things people ask before booking.</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <button class="faq-question">
+          Do I need any technical skills?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No. We handle the entire build from start to finish. You don't need to know anything about automation tools, APIs, or software. All you need to do is tell us how your agency works — we handle the rest.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-up delay-1">
+        <button class="faq-question">
+          How quickly will I see results?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Most clients notice a difference in week one — especially with lead follow-up and admin tasks. The full system is typically live and running within 30 days of our strategy call.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-up delay-2">
+        <button class="faq-question">
+          What tools do you use?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We work with the tools you already use — GoHighLevel, HubSpot, Zapier, Make, Notion, Slack, and more. We adapt to your stack rather than forcing you to adopt new software.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-up delay-3">
+        <button class="faq-question">
+          What does it cost?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Every engagement is scoped to your specific situation, so pricing depends on what we build. We discuss this transparently on the strategy call — no hidden fees, no vague quotes. If we can't help you, we'll tell you upfront.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-up delay-4">
+        <button class="faq-question">
+          What if my agency is too small?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Automation often has the biggest impact on smaller agencies — because the founder is doing everything manually. If you're handling leads, sales, and operations on your own, you're exactly who this is built for.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Big CTA ────────────────────────────────────────────── -->
+<section class="lp-cta" id="book">
+  <div class="container">
+    <div class="badge badge-green fade-up" style="margin-bottom: 1.4rem; justify-content: center;">Limited spots available</div>
+    <h2 class="fade-up delay-1">There's only so much<br>you can do manually.</h2>
+    <p class="fade-up delay-2" style="font-size: 1.1rem; color: var(--text-2); max-width: 520px; margin: 0 auto 2.4rem;">
+      Book a free 30-minute strategy call. We'll map out exactly where your agency is losing time and show you what we'd build to fix it.
+    </p>
+    <a href="contact.html" class="btn btn-primary fade-up delay-3" style="font-size: 1.1rem; padding: 18px 40px;">
+      Book Your Free 30-Min Strategy Call
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <p class="hero-trust fade-up delay-4" style="margin-top: 1.2rem;">No commitment required &nbsp;·&nbsp; Honest advice, no sales pressure</p>
+
+    <!-- Guarantee -->
+    <div class="guarantee fade-up delay-5" style="margin-top: 3rem;">
+      <div class="guarantee-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div>
+        <h4>Transparent by default</h4>
+        <p>If we can't build something that delivers measurable results for your agency, we'll tell you on the call — not after you've paid.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Minimal Footer ─────────────────────────────────────── -->
+<footer style="border-top: 1px solid var(--border); padding: 32px 0;">
+  <div class="container">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+      <div style="font-size: 0.82rem; color: var(--text-3); display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="index.html" style="color: var(--text-3); transition: color 0.2s;">Home</a>
+        <a href="privacy-policy.html" style="color: var(--text-3); transition: color 0.2s;">Privacy Policy</a>
+        <a href="impressum.html" style="color: var(--text-3); transition: color 0.2s;">Impressum</a>
+      </div>
+      <span style="font-size: 0.8rem; color: var(--text-3);">© 2026 Fluence Agency</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('lpNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

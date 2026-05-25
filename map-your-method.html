@@ -1,0 +1,412 @@
+<!-- MAP YOUR METHOD — GHL HTML Block -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  .mym-wrap * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mym-wrap {
+    font-family: 'Inter', sans-serif;
+    background-color: #241d40;
+    color: #f6f1dc;
+    width: 100%;
+  }
+
+  /* ── HERO ── */
+  .mym-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 24px 64px;
+    text-align: center;
+    position: relative;
+  }
+
+  .mym-hero::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: #4e171a;
+    margin: 40px auto 0;
+  }
+
+  .mym-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f6f1dc;
+    opacity: 0.55;
+    margin-bottom: 24px;
+  }
+
+  .mym-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 88px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f6f1dc;
+    max-width: 700px;
+  }
+
+  .mym-headline em {
+    font-style: italic;
+    color: #f6f1dc;
+  }
+
+  /* ── INTRO BLOCK ── */
+  .mym-intro {
+    background-color: #f6f1dc;
+    color: #241d40;
+    padding: 72px 24px;
+    text-align: center;
+  }
+
+  .mym-intro-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .mym-intro p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 400;
+    line-height: 1.65;
+    color: #241d40;
+  }
+
+  /* ── IMAGE ── */
+  .mym-image-wrap {
+    width: 100%;
+    max-height: 520px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mym-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .mym-image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, #241d40);
+  }
+
+  /* ── INSIDE SECTION ── */
+  .mym-inside {
+    background: #241d40;
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .mym-inside-inner {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .mym-section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f6f1dc;
+    opacity: 0.45;
+    margin-bottom: 20px;
+  }
+
+  .mym-inside h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: #f6f1dc;
+    margin-bottom: 20px;
+  }
+
+  .mym-inside p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #f6f1dc;
+    opacity: 0.75;
+  }
+
+  /* ── IS THIS FOR YOU ── */
+  .mym-for-you {
+    background: #f6f1dc;
+    padding: 80px 24px;
+  }
+
+  .mym-for-you-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .mym-for-you .mym-section-label {
+    color: #241d40;
+    opacity: 0.4;
+    text-align: center;
+  }
+
+  .mym-for-you h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: #241d40;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .mym-for-you .mym-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #241d40;
+    opacity: 0.6;
+    text-align: center;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .mym-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mym-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #241d40;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(36, 29, 64, 0.1);
+  }
+
+  .mym-checklist li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .mym-check-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 1.5px solid #4e171a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mym-check-icon svg {
+    width: 10px;
+    height: 10px;
+    stroke: #4e171a;
+    stroke-width: 2.5;
+    fill: none;
+  }
+
+  /* ── CLOSING CTA ── */
+  .mym-cta {
+    background: #241d40;
+    padding: 96px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mym-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 64px;
+    background: #4e171a;
+  }
+
+  .mym-cta-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .mym-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: #f6f1dc;
+    margin-bottom: 12px;
+  }
+
+  .mym-cta h2 em {
+    font-style: italic;
+  }
+
+  .mym-cta .mym-cta-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #f6f1dc;
+    opacity: 0.55;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .mym-btn {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f6f1dc;
+    background: transparent;
+    border: 1px solid rgba(246, 241, 220, 0.35);
+    padding: 18px 44px;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    cursor: pointer;
+  }
+
+  .mym-btn:hover {
+    background: #4e171a;
+    border-color: #4e171a;
+    color: #f6f1dc;
+  }
+
+  .mym-btn-solid {
+    background: #f6f1dc;
+    border-color: #f6f1dc;
+    color: #241d40;
+  }
+
+  .mym-btn-solid:hover {
+    background: #4e171a;
+    border-color: #4e171a;
+    color: #f6f1dc;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .mym-hero {
+      padding: 64px 20px 48px;
+    }
+    .mym-intro,
+    .mym-inside,
+    .mym-for-you,
+    .mym-cta {
+      padding: 60px 20px;
+    }
+    .mym-image-wrap {
+      max-height: 320px;
+    }
+  }
+</style>
+
+<div class="mym-wrap">
+
+  <!-- HERO -->
+  <section class="mym-hero">
+    <p class="mym-eyebrow">Free Worksheet</p>
+    <h1 class="mym-headline"><em>Map Your</em><br>Method.</h1>
+  </section>
+
+  <!-- INTRO -->
+  <section class="mym-intro">
+    <div class="mym-intro-inner">
+      <p>You have been coaching clients one by one for a while. You keep tailoring what you do for each client, but the truth is that you actually have a process for all of them — you just don't realize it.</p>
+    </div>
+  </section>
+
+  <!-- IMAGE -->
+  <div class="mym-image-wrap">
+    <img
+      src="https://assets.cdn.filesafe.space/4TqqQrsiis8HmtfpwFGX/media/69d36292a7dcb4cff0d3a92b.jpeg"
+      alt="Map Your Method Worksheet"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- INSIDE THE WORKSHEET -->
+  <section class="mym-inside">
+    <div class="mym-inside-inner">
+      <p class="mym-section-label">Inside the worksheet</p>
+      <h2>Excavate the process<br><em>you already use.</em></h2>
+      <p>The repeatable sequence that gets results — already living inside every client engagement you've run. This worksheet helps you find it, name it, and own it.</p>
+    </div>
+  </section>
+
+  <!-- IS THIS FOR YOU -->
+  <section class="mym-for-you">
+    <div class="mym-for-you-inner">
+      <p class="mym-section-label">Is this for you?</p>
+      <h2>If any of these sound familiar,<br><em>you're in the right place.</em></h2>
+      <p class="mym-sub">This worksheet is for coaches who are done selling time.</p>
+
+      <ul class="mym-checklist">
+        <li>
+          <span class="mym-check-icon">
+            <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+          </span>
+          You get results for clients but you can't explain exactly how you do it in a way that sounds like a system.
+        </li>
+        <li>
+          <span class="mym-check-icon">
+            <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+          </span>
+          You are selling sessions by the hour or by the month and you know there is a ceiling on that model.
+        </li>
+        <li>
+          <span class="mym-check-icon">
+            <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+          </span>
+          You have thought about a group program but do not know what the curriculum would look like.
+        </li>
+        <li>
+          <span class="mym-check-icon">
+            <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+          </span>
+          You explain your process differently every time someone asks what you do.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="mym-cta">
+    <div class="mym-cta-inner">
+      <h2>You already have<br><em>a method.</em></h2>
+      <p class="mym-cta-sub">Time to own it.</p>
+      <a class="mym-btn mym-btn-solid" href="https://links.businessdomme.com/widget/form/ivYHCpv6ayP5Df2aLvdW" target="_blank" rel="noopener">Get the free worksheet now</a>
+    </div>
+  </section>
+
+</div>
+<!-- END MAP YOUR METHOD -->
