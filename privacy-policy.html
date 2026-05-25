@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/consent-defaults.js"></script>
 </head>
 <body>
 
@@ -92,14 +93,16 @@
       <p>Legal basis: legitimate interests (Art. 6(1)(f) GDPR) or performance of a contract (Art. 6(1)(b) GDPR).</p>
 
       <h2>3. Cookies</h2>
-      <p>Our website itself does not use cookies beyond those that are technically necessary for the site to function. Third-party embeds (such as Cal.com) may set their own cookies. Please refer to Cal.com's privacy documentation for details on their cookie use.</p>
+      <p>We use a strictly necessary cookie (<code>fluence_consent</code>) to remember your cookie preferences. With your consent, we use Google Analytics to understand how visitors use our website. Analytics cookies are only set after you accept them via our cookie banner. For full details, see our <a href="cookie-policy.html">Cookie Policy</a>. You can change your choices at any time via <button type="button" class="cookie-settings-link" data-cookie-settings>Cookie settings</button> in the footer.</p>
+      <p>Third-party embeds on our contact page (Cal.com) may set their own cookies when you use the booking widget. See our Cookie Policy and Cal.com's documentation for details.</p>
 
       <h2>4. Third-Party Services</h2>
       <p>We use the following third-party services which may process your data:</p>
       <ul>
+        <li><strong>Google Analytics</strong> — used only if you consent to analytics cookies, to measure website usage. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and our <a href="cookie-policy.html">Cookie Policy</a>.</li>
         <li><strong>Google Fonts</strong> — fonts are loaded from Google's CDN. When fonts are requested, your IP address is transmitted to Google. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
         <li><strong>Cal.com</strong> — used for booking strategy calls. See <a href="https://cal.com/privacy" target="_blank" rel="noopener">Cal.com's Privacy Policy</a>.</li>
-        <li><strong>Hosting provider</strong> — our website is hosted by [Your Hosting Provider]. Server log files are processed on their infrastructure.</li>
+        <li><strong>Hosting provider (Netlify)</strong> — our website is hosted on Netlify. Server log files are processed on their infrastructure.</li>
       </ul>
 
       <h2>5. Data Retention</h2>
@@ -141,7 +144,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
-        <p>Automation systems for agency owners who want to grow without burning out.</p>
+        <p>Automation systems for founders who want to grow without burning out.</p>
       </div>
       <div class="footer-col">
         <h4>Pages</h4>
@@ -164,13 +167,19 @@
         <h4>Legal</h4>
         <ul>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="impressum.html">Imprint</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Fluence Agency. All rights reserved.</span>
-      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="impressum.html">Impressum</a></span>
+      <span>
+        <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="cookie-policy.html">Cookie Policy</a> &nbsp;·&nbsp;
+        <a href="impressum.html">Imprint</a> &nbsp;·&nbsp;
+        <button type="button" class="cookie-settings-link" data-cookie-settings>Cookie settings</button>
+      </span>
     </div>
   </div>
 </footer>
@@ -185,5 +194,6 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
+<script src="js/cookie-consent.js" defer></script>
 </body>
 </html>
