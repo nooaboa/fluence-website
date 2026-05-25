@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/api/consent"
+  to = "/.netlify/functions/consent"
+  status = 200
+
+[functions]
+  directory = "netlify/functions"
