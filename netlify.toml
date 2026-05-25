@@ -8,3 +8,8 @@
 
 [functions]
   directory = "netlify/functions"
+
+  [[redirects]]
+  from = "/*"
+  to = "/:splat.html"
+  status = 200
