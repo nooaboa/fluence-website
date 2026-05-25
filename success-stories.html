@@ -124,20 +124,83 @@
       overflow: hidden;
     }
 
-    .case-study-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: calc(var(--r-lg) - 2px);
-      max-width: none;
-    }
-
-    .case-study-image.is-filled {
+    .case-study-image:has(.case-study-image-trigger) {
       border-style: solid;
       border-color: var(--border);
       background: var(--bg-2);
       padding: 8px;
+    }
+
+    .case-study-image:has(.case-study-image-trigger) .case-study-image-placeholder {
+      display: none;
+    }
+
+    .case-study-image-trigger {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 264px;
+      padding: 0;
+      border: none;
+      border-radius: calc(var(--r-lg) - 2px);
+      background: transparent;
+      cursor: zoom-in;
+      overflow: hidden;
+      transition: box-shadow 0.3s var(--ease);
+    }
+
+    .case-study-image-trigger:hover,
+    .case-study-image-trigger:focus-visible {
+      box-shadow: 0 8px 28px rgba(20, 20, 18, 0.12);
+    }
+
+    .case-study-image-trigger:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
+    }
+
+    .case-study-image-trigger img {
+      width: 100%;
+      height: 100%;
+      min-height: 264px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: calc(var(--r-lg) - 2px);
+      max-width: none;
+      display: block;
+      transition: transform 0.45s var(--ease);
+    }
+
+    .case-study-image-trigger:hover img {
+      transform: scale(1.03);
+    }
+
+    .case-study-expand-hint {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(26, 26, 24, 0.38);
+      opacity: 0;
+      transition: opacity 0.25s var(--ease);
+      pointer-events: none;
+    }
+
+    .case-study-image-trigger:hover .case-study-expand-hint,
+    .case-study-image-trigger:focus-visible .case-study-expand-hint {
+      opacity: 1;
+    }
+
+    .case-study-expand-hint svg {
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      border-radius: 50%;
+      background: rgba(253, 252, 251, 0.95);
+      color: var(--green);
+      box-shadow: 0 4px 20px rgba(20, 20, 18, 0.18);
     }
 
     .case-study-image-placeholder svg {
@@ -153,21 +216,110 @@
       line-height: 1.5;
     }
 
-    .case-study-image-placeholder code {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-2);
+    /* Lightbox */
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s var(--ease), visibility 0.3s;
     }
 
-    .case-study-image:has(img) {
-      border-style: solid;
-      border-color: var(--border);
+    .image-lightbox.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .image-lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 26, 24, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      cursor: pointer;
+    }
+
+    .image-lightbox-frame {
+      position: relative;
+      z-index: 1;
+      max-width: min(1100px, 94vw);
+      max-height: 90vh;
+      width: 100%;
+      padding: 12px;
       background: var(--bg-2);
-      padding: 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      box-shadow:
+        0 24px 80px rgba(20, 20, 18, 0.28),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+      transform: scale(0.94) translateY(12px);
+      transition: transform 0.35s var(--ease);
     }
 
-    .case-study-image:has(img) .case-study-image-placeholder {
-      display: none;
+    .image-lightbox.is-open .image-lightbox-frame {
+      transform: scale(1) translateY(0);
+    }
+
+    .image-lightbox-frame img {
+      display: block;
+      width: 100%;
+      max-height: calc(90vh - 48px);
+      object-fit: contain;
+      object-position: center;
+      border-radius: calc(var(--r-xl) - 8px);
+      max-width: none;
+    }
+
+    .image-lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--bg-2);
+      color: var(--text);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(20, 20, 18, 0.12);
+      transition: background 0.2s, color 0.2s, transform 0.2s var(--ease);
+    }
+
+    .image-lightbox-close:hover {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+      transform: scale(1.05);
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .case-study-image-trigger img,
+      .case-study-image-trigger:hover img,
+      .image-lightbox-frame,
+      .image-lightbox.is-open .image-lightbox-frame {
+        transition: none;
+        transform: none;
+      }
+    }
+
+    @media (hover: none) {
+      .case-study-expand-hint {
+        opacity: 0.9;
+      }
     }
 
     @media (max-width: 900px) {
@@ -290,11 +442,13 @@
               <div class="case-kpi-label">From signed contract to active project</div>
             </div>
           </div>
-          <div class="case-study-image" aria-label="Screenshot placeholder">
-            <div class="case-study-image-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-            </div>
-         <img src="assets/Screenshot 2025-12-15 at 12.06.27.png" alt="Marketing agency onboarding automation" />
+          <div class="case-study-image">
+            <button type="button" class="case-study-image-trigger" data-lightbox aria-label="View full size: Marketing agency onboarding automation">
+              <img src="assets/Screenshot 2025-12-15 at 12.06.27.png" alt="Marketing agency onboarding automation" />
+              <span class="case-study-expand-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+              </span>
+            </button>
           </div>
         </div>
       </article>
@@ -330,11 +484,13 @@
               <div class="case-kpi-label">To slow follow-up</div>
             </div>
           </div>
-          <div class="case-study-image" aria-label="Screenshot placeholder">
-            <div class="case-study-image-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-            </div>
-         <img src="assets/tony agent.PNG" alt="Creator-Founder: Online Coaching lead automation" />
+          <div class="case-study-image">
+            <button type="button" class="case-study-image-trigger" data-lightbox aria-label="View full size: Creator-Founder lead automation">
+              <img src="assets/tony agent.PNG" alt="Creator-Founder: Online Coaching lead automation" />
+              <span class="case-study-expand-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+              </span>
+            </button>
           </div>
         </div>
       </article>
@@ -370,11 +526,13 @@
               <div class="case-kpi-label">Team uses Telegram they already had</div>
             </div>
           </div>
-          <div class="case-study-image" aria-label="Screenshot placeholder">
-            <div class="case-study-image-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-            </div>
-          <img src="assets\wann geld.PNG" alt="Internal AI support agent for staffing team" />
+          <div class="case-study-image">
+            <button type="button" class="case-study-image-trigger" data-lightbox aria-label="View full size: Internal AI support agent">
+              <img src="assets/wann geld.PNG" alt="Internal AI support agent for staffing team" />
+              <span class="case-study-expand-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+              </span>
+            </button>
           </div>
         </div>
       </article>
@@ -403,7 +561,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" aria-label="Fluence home"><img src="assets/Fluence logo black.png" alt="Fluence" class="nav-logo-img" /></a>
-        <p>Automation systems for agency owners who want to grow without burning out.</p>
+        <p>Automation systems for founders who want to grow without burning out.</p>
       </div>
       <div class="footer-col">
         <h4>Pages</h4>
@@ -437,6 +595,15 @@
   </div>
 </footer>
 
+<!-- Image lightbox -->
+<div id="imageLightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot" hidden>
+  <div class="image-lightbox-backdrop" data-lightbox-close tabindex="-1"></div>
+  <div class="image-lightbox-frame">
+    <button type="button" class="image-lightbox-close" data-lightbox-close aria-label="Close">×</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+</div>
+
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
@@ -446,6 +613,45 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Case study image lightbox ──
+  (function () {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeEls = lightbox.querySelectorAll('[data-lightbox-close]');
+    const triggers = document.querySelectorAll('[data-lightbox]');
+    let lastFocus = null;
+
+    function openLightbox(src, alt) {
+      lastFocus = document.activeElement;
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightbox.hidden = false;
+      lightbox.classList.add('is-open');
+      document.body.classList.add('lightbox-open');
+      lightbox.querySelector('.image-lightbox-close').focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.classList.remove('lightbox-open');
+      lightbox.hidden = true;
+      lightboxImg.removeAttribute('src');
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    }
+
+    triggers.forEach((btn) => {
+      const img = btn.querySelector('img');
+      if (!img) return;
+      btn.addEventListener('click', () => openLightbox(img.src, img.alt || ''));
+    });
+
+    closeEls.forEach((el) => el.addEventListener('click', closeLightbox));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
+  })();
 </script>
 </body>
 </html>
