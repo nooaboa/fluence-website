@@ -11,6 +11,12 @@
   <link href="https://db.onlinewebfonts.com/c/1a991b240e707c46ca904d731893f108?family=Neue+Montreal+Bold" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <style>
+    .case-studies-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
     .case-study-card {
       background: var(--bg-2);
       border: 1px solid var(--border);
@@ -30,38 +36,21 @@
     .case-study-header {
       padding: 36px 36px 28px;
       border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 24px;
     }
 
-    .case-study-meta { flex: 1; }
-
-    .case-study-result-big {
-      font-family: var(--font-display);
-      font-size: 3.2rem;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: -0.05em;
-      line-height: 1;
-      text-align: right;
-      flex-shrink: 0;
+    .case-study-header .story-tag {
+      display: inline-block;
+      margin-bottom: 14px;
     }
 
-    .case-study-result-big span {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-top: 4px;
-      text-align: right;
+    .case-study-header h2 {
+      font-size: 1.6rem;
+      margin-top: 0;
+      max-width: 52rem;
     }
 
     .case-study-body {
-      padding: 28px 36px 36px;
+      padding: 28px 36px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
@@ -78,66 +67,124 @@
 
     .case-study-section p { font-size: 0.92rem; }
 
-    .metrics-row {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-top: 24px;
+    .case-study-outcomes {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) 1fr;
+      gap: 28px;
+      padding: 0 36px 36px;
+      align-items: stretch;
     }
 
-    .metric {
+    .case-study-kpis {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .case-kpi {
+      padding: 18px 20px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
 
-    .metric-value {
+    .case-kpi-value {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 1.65rem;
       font-weight: 700;
       color: var(--text);
       letter-spacing: -0.03em;
+      line-height: 1.1;
     }
 
-    .metric-value em { color: var(--green); font-style: normal; }
+    .case-kpi-value em { color: var(--green); font-style: normal; }
 
-    .metric-label {
+    .case-kpi-label {
       font-size: 0.78rem;
       color: var(--text-3);
       letter-spacing: 0.03em;
+      line-height: 1.4;
     }
 
-    /* Placeholder cards */
-    .placeholder-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 40px;
-    }
-
-    .placeholder-card {
-      padding: 40px 28px;
-      border: 1px dashed var(--border);
-      border-radius: var(--r-lg);
+    .case-study-image {
+      min-height: 280px;
       background: var(--bg-3);
+      border: 1px dashed var(--border-hover);
+      border-radius: var(--r-lg);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 12px;
-      min-height: 200px;
+      gap: 10px;
+      padding: 24px;
+      overflow: hidden;
     }
 
-    .placeholder-card svg { width: 28px; height: 28px; color: var(--text-3); }
-    .placeholder-card p { font-size: 0.85rem; color: var(--text-3); }
+    .case-study-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: calc(var(--r-lg) - 2px);
+      max-width: none;
+    }
+
+    .case-study-image.is-filled {
+      border-style: solid;
+      border-color: var(--border);
+      background: var(--bg-2);
+      padding: 8px;
+    }
+
+    .case-study-image-placeholder svg {
+      width: 32px;
+      height: 32px;
+      color: var(--text-3);
+    }
+
+    .case-study-image-placeholder p {
+      font-size: 0.82rem;
+      color: var(--text-3);
+      max-width: 220px;
+      line-height: 1.5;
+    }
+
+    .case-study-image-placeholder code {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-2);
+    }
+
+    .case-study-image:has(img) {
+      border-style: solid;
+      border-color: var(--border);
+      background: var(--bg-2);
+      padding: 8px;
+    }
+
+    .case-study-image:has(img) .case-study-image-placeholder {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .case-study-outcomes {
+        grid-template-columns: 1fr;
+      }
+
+      .case-study-image {
+        min-height: 220px;
+      }
+    }
 
     @media (max-width: 768px) {
-      .case-study-header { flex-direction: column; gap: 16px; }
-      .case-study-result-big { text-align: left; font-size: 2.4rem; }
-      .case-study-result-big span { text-align: left; }
+      .case-study-header,
+      .case-study-body,
+      .case-study-outcomes { padding-left: 24px; padding-right: 24px; }
       .case-study-body { grid-template-columns: 1fr; gap: 20px; }
-      .placeholder-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -146,7 +193,7 @@
 <!-- ── Navigation ────────────────────────────────────────── -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+    <a href="index.html" class="nav-logo" aria-label="Fluence home"><img src="assets/Fluence logo black.png" alt="Fluence" class="nav-logo-img" /></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -178,8 +225,8 @@
   <div class="page-hero-glow"></div>
   <div class="container">
     <div class="eyebrow fade-up" style="justify-content:center;">Success Stories</div>
-    <h1 class="fade-up delay-1">Agencies that got their<br>time and revenue back.</h1>
-    <p class="fade-up delay-2">Real results from real agency owners. No fluff, no vanity metrics. Just hours saved and money made.</p>
+    <h1 class="fade-up delay-1">Founders that got their<br>time and revenue back.</h1>
+    <p class="fade-up delay-2">Real results from real business owners. No fluff, no vanity metrics. Just hours saved and money made.</p>
   </div>
 </section>
 
@@ -188,11 +235,11 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item fade-up">
-        <div class="stat-number">50<span>+</span></div>
+        <div class="stat-number">30<span>+</span></div>
         <div class="stat-label">Automation systems delivered</div>
       </div>
       <div class="stat-item fade-up delay-1">
-        <div class="stat-number">15<span>h</span></div>
+        <div class="stat-number">10<span>h</span></div>
         <div class="stat-label">Average weekly time saved</div>
       </div>
       <div class="stat-item fade-up delay-2">
@@ -210,101 +257,128 @@
 <!-- ── Case Studies ───────────────────────────────────────── -->
 <section class="section">
   <div class="container">
+    <div class="case-studies-list">
 
-    <!-- Case Study 1 -->
-    <div class="case-study-card fade-up" style="margin-bottom: 24px;">
-      <div class="case-study-header">
-        <div class="case-study-meta">
-          <span class="story-tag" style="margin-bottom: 14px;">Marketing Agency</span>
-          <h2 style="font-size: 1.6rem; margin-top: 10px;">From 4-hour onboarding marathons to a 15-minute automated flow.</h2>
+      <!-- Case Study 1 -->
+      <article class="case-study-card fade-up">
+        <div class="case-study-header">
+          <span class="story-tag">Marketing Agency</span>
+          <h2>From 4-hour onboarding marathons to a 15-minute automated flow.</h2>
         </div>
-        <div class="case-study-result-big">12h<span>saved / week</span></div>
-      </div>
-      <div class="case-study-body">
-        <div class="case-study-section">
-          <h4>The Challenge</h4>
-          <p>Every new client meant the founder spending half a day on onboarding: sending welcome emails, setting up project folders, briefing the team, and chasing signed contracts. With four active clients, this was consuming their entire Monday.</p>
-        </div>
-        <div class="case-study-section">
-          <h4>What We Built</h4>
-          <p>A fully automated onboarding system triggered the moment a contract was signed. Welcome email, client portal setup, team briefing, task creation, and payment schedule — all handled without a single manual step.</p>
-        </div>
-      </div>
-      <div style="padding: 0 36px 32px;">
-        <div class="metrics-row">
-          <div class="metric">
-            <div class="metric-value"><em>12h</em></div>
-            <div class="metric-label">Saved per week</div>
+        <div class="case-study-body">
+          <div class="case-study-section">
+            <h4>The Challenge</h4>
+            <p>Every new client meant the founder spending half a day on onboarding: sending welcome emails, setting up project folders, briefing the team, and chasing signed contracts. With four active clients, this was consuming their entire Monday.</p>
           </div>
-          <div class="metric">
-            <div class="metric-value"><em>0</em> manual steps</div>
-            <div class="metric-label">In onboarding flow</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value"><em>15min</em></div>
-            <div class="metric-label">From signed contract to active project</div>
+          <div class="case-study-section">
+            <h4>What We Built</h4>
+            <p>A fully automated onboarding system triggered the moment a contract was signed. Welcome email, client portal setup, team briefing, task creation, and payment schedule — all handled without a single manual step.</p>
           </div>
         </div>
-      </div>
-    </div>
+        <div class="case-study-outcomes">
+          <div class="case-study-kpis">
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>12h</em></div>
+              <div class="case-kpi-label">Saved per week</div>
+            </div>
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>0</em> manual steps</div>
+              <div class="case-kpi-label">In onboarding flow</div>
+            </div>
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>15min</em></div>
+              <div class="case-kpi-label">From signed contract to active project</div>
+            </div>
+          </div>
+          <div class="case-study-image" aria-label="Screenshot placeholder">
+            <div class="case-study-image-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+         <img src="assets/Screenshot 2025-12-15 at 12.06.27.png" alt="Marketing agency onboarding automation" />
+          </div>
+        </div>
+      </article>
 
-    <!-- Case Study 2 -->
-    <div class="case-study-card fade-up delay-1" style="margin-bottom: 24px;">
-      <div class="case-study-header">
-        <div class="case-study-meta">
-          <span class="story-tag" style="margin-bottom: 14px;">Social Media Agency</span>
-          <h2 style="font-size: 1.6rem; margin-top: 10px;">Tripled discovery call volume without hiring or spending more on ads.</h2>
+      <!-- Case Study 2 -->
+      <article class="case-study-card fade-up delay-1">
+        <div class="case-study-header">
+          <span class="story-tag">Creator-Founder: Online Coaching</span>
+          <h2>Tripled discovery call volume without hiring or spending more on ads.</h2>
         </div>
-        <div class="case-study-result-big">3×<span>more calls booked</span></div>
-      </div>
-      <div class="case-study-body">
-        <div class="case-study-section">
-          <h4>The Challenge</h4>
-          <p>Leads were coming in through Instagram and the website, but follow-up was inconsistent. Busy weeks meant new inquiries sat for days before getting a response — and by then, the prospect had moved on. A real, costly leak.</p>
-        </div>
-        <div class="case-study-section">
-          <h4>What We Built</h4>
-          <p>An automated lead response system that replied to every new inquiry within 5 minutes, sent a personalised qualification sequence, and booked discovery calls directly — all without the founder being involved until the call itself.</p>
-        </div>
-      </div>
-      <div style="padding: 0 36px 32px;">
-        <div class="metrics-row">
-          <div class="metric">
-            <div class="metric-value"><em>&lt;5min</em></div>
-            <div class="metric-label">Lead response time</div>
+        <div class="case-study-body">
+          <div class="case-study-section">
+            <h4>The Challenge</h4>
+            <p>Leads were coming in through Instagram and the website, but follow-up was inconsistent. Busy weeks meant new inquiries sat for days before getting a response, and by then, the prospect had moved on. A real, costly leak.</p>
           </div>
-          <div class="metric">
-            <div class="metric-value"><em>3×</em></div>
-            <div class="metric-label">Discovery calls per month</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value"><em>0</em> leads lost</div>
-            <div class="metric-label">To slow follow-up</div>
+          <div class="case-study-section">
+            <h4>What We Built</h4>
+            <p>An automated lead response agent that replied to every new inquiry within 60 seconds. The agent didn't just send a personalised qualification sequence, it emulated a real conversation and booked discovery calls directly, all without the founder being involved until the call itself.</p>
           </div>
         </div>
-      </div>
-    </div>
+        <div class="case-study-outcomes">
+          <div class="case-study-kpis">
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>&lt;1min</em></div>
+              <div class="case-kpi-label">Lead response time</div>
+            </div>
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>3×</em></div>
+              <div class="case-kpi-label">Discovery calls per month</div>
+            </div>
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>0</em> leads lost</div>
+              <div class="case-kpi-label">To slow follow-up</div>
+            </div>
+          </div>
+          <div class="case-study-image" aria-label="Screenshot placeholder">
+            <div class="case-study-image-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+         <img src="assets/tony agent.PNG" alt="Creator-Founder: Online Coaching lead automation" />
+          </div>
+        </div>
+      </article>
 
-    <!-- Placeholder cards for future case studies -->
-    <div class="section-header fade-up" style="margin-top: 56px; margin-bottom: 16px;">
-      <div class="eyebrow">Coming Soon</div>
-      <h2 style="font-size: 1.6rem;">More case studies on the way.</h2>
-      <p>We're documenting results from recent engagements. Check back soon.</p>
-    </div>
+      <!-- Case Study 3 -->
+      <article class="case-study-card fade-up delay-2">
+        <div class="case-study-header">
+          <span class="story-tag">Staffing &amp; HR</span>
+          <h2>Senior staff stopped answering the same internal questions all day.</h2>
+        </div>
+        <div class="case-study-body">
+          <div class="case-study-section">
+            <h4>The Challenge</h4>
+            <p>Operations staff were fielding repeat questions about policies, processes, and how-tos: work that did not need senior attention but still broke focus and ate hours every week.</p>
+          </div>
+          <div class="case-study-section">
+            <h4>What We Built</h4>
+            <p>An internal AI support agent on a custom knowledge base, delivered inside Telegram so the team could get instant answers without learning new software.</p>
+          </div>
+        </div>
+        <div class="case-study-outcomes">
+          <div class="case-study-kpis">
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>10h+</em></div>
+              <div class="case-kpi-label">Saved every week</div>
+            </div>
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>24/7</em></div>
+              <div class="case-kpi-label">Instant answers for staff</div>
+            </div>
+            <div class="case-kpi">
+              <div class="case-kpi-value"><em>0</em> new tools</div>
+              <div class="case-kpi-label">Team uses Telegram they already had</div>
+            </div>
+          </div>
+          <div class="case-study-image" aria-label="Screenshot placeholder">
+            <div class="case-study-image-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+          <img src="assets\wann geld.PNG" alt="Internal AI support agent for staffing team" />
+          </div>
+        </div>
+      </article>
 
-    <div class="placeholder-grid">
-      <div class="placeholder-card fade-up delay-1">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        <p>SEO / Content Agency<br>Case Study</p>
-      </div>
-      <div class="placeholder-card fade-up delay-2">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        <p>Paid Ads Agency<br>Case Study</p>
-      </div>
-      <div class="placeholder-card fade-up delay-3">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        <p>Video Production Agency<br>Case Study</p>
-      </div>
     </div>
   </div>
 </section>
@@ -313,9 +387,9 @@
 <section class="section" style="border-top: 1px solid var(--border);">
   <div class="container">
     <div class="cta-block fade-up">
-      <div class="eyebrow" style="justify-content:center;">Your agency, next</div>
+      <div class="eyebrow" style="justify-content:center;">Your business, next</div>
       <h2>Want results like these?</h2>
-      <p>Book a free 30-minute strategy call and we'll map out exactly what automation would look like for your specific agency.</p>
+      <p>Book a free 30-minute strategy call and we'll map out exactly what automation would look like for your specific situation.</p>
       <a href="contact.html" class="btn btn-primary">Book Your Free Strategy Call
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
@@ -328,7 +402,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">Fluence<span>.</span></a>
+        <a href="index.html" class="nav-logo" aria-label="Fluence home"><img src="assets/Fluence logo black.png" alt="Fluence" class="nav-logo-img" /></a>
         <p>Automation systems for agency owners who want to grow without burning out.</p>
       </div>
       <div class="footer-col">
