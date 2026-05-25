@@ -237,16 +237,20 @@ em { font-style: normal; }
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: var(--text);
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
-.nav-logo span { color: var(--green); }
+.nav-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.footer-brand .nav-logo img {
+  height: 32px;
+}
 
 .nav-links {
   display: flex;
