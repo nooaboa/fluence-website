@@ -45,6 +45,10 @@
   /* Layout */
   --max: 1160px;
   --nav-h: 70px;
+  --nav-btn-pad-y: 11px;
+  --nav-btn-font: 0.82rem;
+  --nav-btn-line: 1.25;
+  --nav-btn-height: calc(var(--nav-btn-pad-y) * 2 + var(--nav-btn-font) * var(--nav-btn-line));
 
   /* Typography */
   --font-display: 'Neue Montreal Bold', 'DM Sans', sans-serif;
@@ -245,18 +249,18 @@ em { font-style: normal; }
   line-height: 0;
 }
 
-/* Override global img { max-width: 100% } — otherwise logo fills the nav */
+/* Match nav CTA button height */
 .nav-logo img {
-  height: 1.3rem;
+  height: var(--nav-btn-height);
   width: auto;
   max-width: none;
-  max-height: 1.3rem;
+  max-height: var(--nav-btn-height);
   display: block;
 }
 
 .footer-brand .nav-logo img {
-  height: 1.3rem;
-  max-height: 1.3rem;
+  height: var(--nav-btn-height);
+  max-height: var(--nav-btn-height);
 }
 
 .nav-links {
@@ -280,7 +284,11 @@ em { font-style: normal; }
 .nav-links a.active { color: var(--text); }
 
 .nav-cta { display: flex; align-items: center; gap: 12px; }
-.nav-cta .btn { padding: 11px 20px; font-size: 0.82rem; }
+.nav-cta .btn {
+  padding: var(--nav-btn-pad-y) 20px;
+  font-size: var(--nav-btn-font);
+  line-height: var(--nav-btn-line);
+}
 
 /* Mobile menu */
 .nav-hamburger {
