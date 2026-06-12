@@ -12,8 +12,9 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Fluence Agency</title>
+  <title>About: Fluence Agency</title>
   <meta name="description" content="Fluence is an automation studio founded by Nooa Adams. We help founders reclaim their time and scale their revenue through intelligent automation systems." />
+  <link rel="icon" href="assets/Fluence logo bg-green.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -45,16 +46,12 @@
       overflow: hidden;
     }
 
-    .founder-photo-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-3);
+    .founder-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-
-    .founder-photo-placeholder svg { width: 48px; height: 48px; }
-    .founder-photo-placeholder span { font-size: 0.82rem; }
 
     .founder-info .name {
       font-family: var(--font-display);
@@ -168,7 +165,7 @@
         <div class="eyebrow">Our Mission</div>
         <h2>Scale revenue.<br>Not workload.</h2>
         <p style="margin-bottom: 1.2rem;">
-          Too many talented founders are stuck doing the same manual tasks every day — chasing leads, sending follow-ups, onboarding clients one by one. Not because they lack ambition, but because they never built the systems to replace themselves in those roles.
+          Too many talented founders are stuck doing the same manual tasks every day, chasing leads, sending follow-ups, onboarding clients one by one. Not because they lack ambition, but because they never built the systems to replace themselves in those roles.
         </p>
         <p>
           Fluence exists to fix that. We design and build the automation infrastructure that lets your business grow without everything falling on you personally.
@@ -178,11 +175,11 @@
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div class="card" style="padding: 28px;">
             <div class="stat-number" style="font-size: 2rem; margin-bottom: 6px;">Founder-<span>first</span></div>
-            <p style="font-size: 0.9rem;">We work with founders — we understand the exact pressures, tools, and chaos that comes with running a growing business.</p>
+            <p style="font-size: 0.9rem;">We work with founders, so we understand the exact pressures, tools, and chaos that comes with running a growing business.</p>
           </div>
           <div class="card" style="padding: 28px;">
             <div class="stat-number" style="font-size: 2rem; margin-bottom: 6px;">Outcome-<span>driven</span></div>
-            <p style="font-size: 0.9rem;">Our success is measured in hours saved and revenue gained — not systems built or features shipped.</p>
+            <p style="font-size: 0.9rem;">Our success is measured in hours saved and revenue gained, not systems built or features shipped.</p>
           </div>
         </div>
       </div>
@@ -200,10 +197,7 @@
 
     <div class="founder-card fade-up delay-1">
       <div class="founder-photo">
-        <div class="founder-photo-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <span>Photo</span>
-        </div>
+        <img src="assets/IMG_1579.jpg" alt="Nooa Adams, founder of Fluence Agency" />
       </div>
       <div class="founder-info">
         <div class="name">Nooa Adams</div>
@@ -212,10 +206,10 @@
           I started Fluence after watching founder after founder struggle with the same problem: brilliant people stuck doing work that software should be doing for them.
         </p>
         <p>
-          Leads were going cold. Onboarding was taking days. Calendars were empty because no one had time to follow up. The businesses were great — the systems were broken.
+          Leads were going cold. Onboarding was taking days. Calendars were empty because no one had time to follow up. The businesses were great; the systems were broken.
         </p>
         <p>
-          So I started building the automations myself. And the results were immediate — hours back every week, more leads converted, and founders finally able to focus on the work they actually love.
+          So I started building the automations myself. And the results were immediate: hours back every week, more leads converted, and founders finally able to focus on the work they actually love.
         </p>
         <p>
           Today, Fluence is my full focus. I work with founders to design and build the systems that turn their operations from reactive and manual to proactive and automatic.
@@ -258,7 +252,7 @@
       <div class="value-card fade-up delay-1">
         <div class="value-number">04</div>
         <h3>Your tools, your rules</h3>
-        <p>We don't force you onto new platforms. We build in your existing stack — GoHighLevel, Zapier, Make, Notion, whatever you already use.</p>
+        <p>We don't force you onto new platforms. We build in your existing stack: GoHighLevel, Zapier, Make, Notion, whatever you already use.</p>
       </div>
       <div class="value-card fade-up delay-2">
         <div class="value-number">05</div>
@@ -280,13 +274,7 @@
     <div class="section-header fade-up">
       <div class="eyebrow">The Stack</div>
       <h2>Tools we work with.</h2>
-      <p>We build in your ecosystem — no forced migrations, no new tools to learn.</p>
-    </div>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;" class="fade-up delay-1">
-      {["GoHighLevel", "Zapier", "Make (Integromat)", "HubSpot", "Notion", "Slack", "Google Workspace", "Airtable", "ActiveCampaign", "Calendly", "Stripe", "Typeform"].map(tool => `
-      <div style="padding: 10px 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; font-size: 0.88rem; color: var(--text-2); font-weight: 300;">${tool}</div>
-      `).join('')}
+      <p>We build in your ecosystem: no forced migrations, no new tools to learn.</p>
     </div>
 
     <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;" class="fade-up delay-1">
@@ -340,9 +328,10 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="index.html">Lead Management</a></li>
-          <li><a href="index.html">Sales Automation</a></li>
-          <li><a href="index.html">Admin Automation</a></li>
+          <li><a href="index.html#services">Workflow Automation</a></li>
+          <li><a href="index.html#services">AI Agents</a></li>
+          <li><a href="index.html#services">Custom Business Systems</a></li>
+          <li><a href="index.html#services">Integrations</a></li>
         </ul>
       </div>
       <div class="footer-col">

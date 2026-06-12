@@ -1,4 +1,4 @@
-/* Fluence — Consent Mode v2 defaults (must run before any Google scripts) */
+/* Fluence: Consent Mode v2 defaults (must run before any Google scripts) */
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 window.gtag = gtag;

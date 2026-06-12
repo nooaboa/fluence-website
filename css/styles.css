@@ -1,5 +1,5 @@
 /* ============================================================
-   FLUENCE — Shared Stylesheet
+   FLUENCE: Shared Stylesheet
    Warm, minimal, graphic. Workflow-native premium.
    ============================================================ */
 
@@ -115,7 +115,7 @@ p { color: var(--text-2); line-height: 1.75; font-weight: 300; }
 
 em { font-style: normal; }
 
-/* Eyebrow — mono label with a small node dot, no lopsided line */
+/* Eyebrow: mono label with a small node dot, no lopsided line */
 .eyebrow {
   display: inline-flex;
   align-items: center;
