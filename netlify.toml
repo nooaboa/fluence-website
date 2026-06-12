@@ -6,6 +6,16 @@
   to = "/.netlify/functions/consent"
   status = 200
 
+[[redirects]]
+  from = "/landing"
+  to = "/welcome"
+  status = 301
+
+[[redirects]]
+  from = "/landing.html"
+  to = "/welcome"
+  status = 301
+
 [functions]
   directory = "netlify/functions"
 
