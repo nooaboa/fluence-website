@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1R32J2RH85"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1R32J2RH85');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluence · Done-for-You Follow-Up for Coaches</title>
+  <meta name="description" content="Book 3–5 extra calls a month without lifting a finger. Done-for-you follow-up automation that catches every lead in 60 seconds and books the call for you, live in 14 days." />
+  <link rel="icon" href="assets/Fluence logo bg-green.png" type="image/png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Fluence Agency" />
+  <meta property="og:title" content="Fluence · Done-for-You Follow-Up for Coaches" />
+  <meta property="og:description" content="Book 3–5 extra calls a month without lifting a finger. Done-for-you follow-up automation that catches every lead in 60 seconds and books the call for you, live in 14 days." />
+  <meta property="og:url" content="https://fluence-agency.com/coaches" />
+  <meta property="og:image" content="https://fluence-agency.com/assets/Fluence%20logo%20bg-green.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/consent-defaults.js"></script>
+  <style>
+    /* Landing-page specific overrides */
+    .lp-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      transition: all 0.3s var(--ease);
+    }
+    .lp-nav.scrolled {
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .lp-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-h);
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .lp-hero {
+      padding: calc(var(--nav-h) + 100px) 0 70px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .lp-hero-glow {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 600px;
+      background: radial-gradient(ellipse at 50% 30%, rgba(55,202,55,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .lp-hero h1 {
+      font-size: clamp(2.4rem, 5.2vw, 4rem);
+      max-width: 880px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .lp-hero .lead {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: var(--text-2);
+      max-width: 640px;
+      margin: 0 auto 2.4rem;
+    }
+
+    .hero-secondary {
+      display: block;
+      margin-top: 1.1rem;
+      font-size: 0.92rem;
+      color: var(--text-2);
+    }
+
+    .hero-secondary a {
+      color: var(--green);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .hero-secondary a:hover { color: var(--green-2); }
+
+    .social-proof-avatars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-top: 28px;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      margin-left: -10px;
+      background: var(--bg-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-2);
+      flex-shrink: 0;
+    }
+
+    .avatar:first-child { margin-left: 0; }
+    .avatar.a1 { background: #1f3a1f; color: var(--green); }
+    .avatar.a2 { background: #1a1a2e; color: #188bf6; }
+    .avatar.a3 { background: #2a1a1a; color: #e87070; }
+    .avatar.a4 { background: #1a2a2a; color: #70c8e8; }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .social-proof-text {
+      margin-left: 16px;
+      font-size: 0.85rem;
+      color: var(--text-2);
+    }
+
+    .social-proof-text strong { color: var(--text); }
+
+    /* VSL placeholder */
+    .vsl-section {
+      padding: 0 0 80px;
+    }
+
+    .vsl-placeholder {
+      max-width: 860px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(55,202,55,0.08) 0%, transparent 55%),
+        var(--bg-2);
+      border: 1px dashed var(--border-hover);
+      border-radius: var(--r-xl);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--text-3);
+      text-align: center;
+      padding: 32px;
+    }
+
+    .vsl-placeholder-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1.5px solid var(--green-mid);
+      background: var(--green-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vsl-placeholder-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--green);
+      margin-left: 2px;
+    }
+
+    .vsl-placeholder strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--text-2);
+      margin-bottom: 4px;
+    }
+
+    .vsl-placeholder span {
+      font-size: 0.85rem;
+      color: var(--text-3);
+    }
+
+    /* Pain section dark red tint */
+    .pain-section {
+      background: rgba(180,30,30,0.04);
+      border-top: 1px solid rgba(255,80,80,0.08);
+      border-bottom: 1px solid rgba(255,80,80,0.08);
+    }
+
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .pipeline-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px 26px;
+      transition: all 0.3s var(--ease);
+    }
+
+    .pipeline-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-hover);
+      box-shadow: 0 10px 28px rgba(20,20,18,0.07);
+    }
+
+    .pipeline-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .pipeline-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .pipeline-card p {
+      font-size: 0.9rem;
+      color: var(--text-2);
+    }
+
+    .steps-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .proof-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px 26px;
+    }
+
+    .proof-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .proof-card p {
+      font-size: 0.92rem;
+      color: var(--text-2);
+    }
+
+    .proof-card strong { color: var(--text); }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .fit-col {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+    }
+
+    .fit-col.yes { border-color: rgba(55,202,55,0.25); }
+    .fit-col.no { border-color: rgba(255,80,80,0.12); }
+
+    .fit-col h3 {
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+    }
+
+    .fit-col.yes h3 { color: var(--green); }
+    .fit-col.no h3 { color: #e07070; }
+
+    .fit-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .fit-list li {
+      font-size: 0.92rem;
+      color: var(--text-2);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .fit-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .fit-col.yes .fit-list li::before {
+      background: var(--green);
+    }
+
+    .fit-col.no .fit-list li::before {
+      background: #e07070;
+    }
+
+    .fit-list li strong { color: var(--text); }
+
+    /* Big CTA section */
+    .lp-cta {
+      background: linear-gradient(180deg, rgba(55,202,55,0.06) 0%, transparent 100%);
+      border-top: 1px solid rgba(55,202,55,0.14);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .lp-cta h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 16px; }
+
+    .lp-cta .hero-secondary { margin-top: 1.3rem; }
+
+    @media (max-width: 900px) {
+      .pipeline-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    }
+
+    @media (max-width: 768px) {
+      .lp-nav-inner { padding: 0 20px; }
+      .pipeline-grid,
+      .proof-grid,
+      .fit-grid,
+      .steps-grid-4 { grid-template-columns: 1fr; }
+      .social-proof-avatars { flex-wrap: wrap; justify-content: center; row-gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Minimal Nav ────────────────────────────────────────── -->
+<nav class="lp-nav" id="lpNav">
+  <div class="lp-nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Fluence home"><img src="assets/Fluence logo black.png" alt="Fluence" class="nav-logo-img" /></a>
+    <a href="#book" class="btn btn-primary">Book a discovery call
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────── -->
+<section class="lp-hero">
+  <div class="lp-hero-glow"></div>
+  <div class="container">
+    <div class="badge badge-green fade-up" style="margin-bottom: 1.4rem;">For High-Ticket Coaches</div>
+    <h1 class="fade-up delay-1">Book 3–5 extra calls a month<br><em style="color:var(--green);">without lifting a finger.</em></h1>
+    <p class="lead fade-up delay-2">
+      You've got the inbound and the offer. But leads go cold before anyone replies, no-shows vanish, and you're the one chasing. I build the system that catches every lead in 60 seconds and books the call for you, live in 14 days.
+    </p>
+    <div class="hero-ctas fade-up delay-3" style="margin-bottom: 0;">
+      <a href="#book" class="btn btn-primary" style="font-size:1.05rem; padding: 16px 34px;">
+        Book a discovery call
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+    <p class="hero-secondary fade-up delay-4">
+      Not ready to talk? → <a href="contact.html">Get the free Lead Leak Audit</a>
+    </p>
+
+    <!-- Social proof -->
+    <div class="social-proof-avatars fade-up delay-5">
+      <div class="avatar a1"><img src="assets/Mariana.jpg" alt="Mariana" /></div>
+      <div class="avatar a2"><img src="assets/Richard.jpg" alt="Richard" /></div>
+      <div class="avatar a3"><img src="assets/Zach.jpg" alt="Zach" /></div>
+      <div class="avatar a4"><img src="assets/Igor.jpg" alt="Igor" /></div>
+      <div class="social-proof-text"><strong>Founders</strong> already running on automation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VSL Placeholder ───────────────────────────────────── -->
+<section class="vsl-section" id="vsl" aria-label="Video sales letter">
+  <div class="container">
+    <div class="vsl-placeholder fade-up">
+      <div class="vsl-placeholder-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div>
+        <strong>VSL placeholder</strong>
+        <span>Embed your video sales letter here</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ─────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-number">&lt;60<span>s</span></div>
+        <div class="stat-label">Lead response time</div>
+      </div>
+      <div class="stat-item fade-up delay-1">
+        <div class="stat-number">14<span>d</span></div>
+        <div class="stat-label">To go live</div>
+      </div>
+      <div class="stat-item fade-up delay-2">
+        <div class="stat-number">30<span>+</span></div>
+        <div class="stat-label">Teams automated</div>
+      </div>
+      <div class="stat-item fade-up delay-3">
+        <div class="stat-number">3–5</div>
+        <div class="stat-label">Extra calls / month</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Problem ───────────────────────────────────────────── -->
+<section class="section pain-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow" style="color: #e07070;">The Problem</div>
+      <h2>Your offer isn't the problem.<br>Your follow-up speed is.</h2>
+      <p>A lead fills out your form at 9pm. You see it at 11am the next morning. By then they've already booked a call with the coach who replied in five minutes.</p>
+    </div>
+
+    <p class="fade-up" style="text-align:center; max-width:640px; margin: -30px auto 48px; color: var(--text-2); font-size: 1.02rem;">
+      That's the difference between a $2k client and a "seen" notification. Across high-ticket coaching, <strong style="color:var(--text);">30–50% of inbound leads are lost to slow follow-up.</strong> Not to weak offers. Not to price. To timing.
+    </p>
+
+    <div class="pain-grid">
+      <div class="pain-item fade-up delay-1">
+        <div class="pain-icon">🕐</div>
+        <div>
+          <h4>Inquiries go cold</h4>
+          <p>The first reply takes hours, not seconds. By then, they've already booked someone else.</p>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-2">
+        <div class="pain-icon">📵</div>
+        <div>
+          <h4>No-shows disappear</h4>
+          <p>A missed call becomes a lost client, because nobody chases the rebook.</p>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-3">
+        <div class="pain-icon">🧱</div>
+        <div>
+          <h4>You're the bottleneck</h4>
+          <p>Every follow-up, booking, and reminder runs through you, between coaching and content and everything else.</p>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-4">
+        <div class="pain-icon">📋</div>
+        <div>
+          <h4>Your CRM became a guilt trip</h4>
+          <p>A list of people you know you should have followed up with, and didn't.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="fade-up" style="text-align:center; max-width:620px; margin: 48px auto 0; color: var(--text-2); font-size: 1.02rem;">
+      Do the math: if even <em>one</em> $2k lead slips per month because the follow-up was slow, that's <strong style="color:var(--text);">$24k a year</strong> walking out the door.
+    </p>
+  </div>
+</section>
+
+<!-- ── Solution ──────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">The Shift</div>
+      <h2>What if you had a system that<br>does the follow-up for you.</h2>
+      <p>Forget hiring another setter or getting a new CRM subscription. You need the follow-up to <em>just happen</em> instantly, every time, whether you're on a call, asleep, or on holiday.</p>
+    </div>
+
+    <div class="transform-grid fade-up delay-1">
+      <div class="transform-col before">
+        <h3>Without it</h3>
+        <div class="transform-list">
+          <div class="transform-row">Leads wait hours for a first reply</div>
+          <div class="transform-row">You chase bookings over email and DMs</div>
+          <div class="transform-row">No-shows quietly disappear</div>
+          <div class="transform-row">Your CRM is a to-do list you never finish</div>
+          <div class="transform-row">You're the bottleneck between every lead and every call</div>
+        </div>
+      </div>
+      <div class="transform-divider">
+        <div class="transform-arrow">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </div>
+      </div>
+      <div class="transform-col after">
+        <h3>With Fluence</h3>
+        <div class="transform-list">
+          <div class="transform-row">Every lead answered in under 60 seconds</div>
+          <div class="transform-row">Leads book themselves onto your calendar</div>
+          <div class="transform-row">Missed calls get an automatic rebook link</div>
+          <div class="transform-row">Your CRM becomes a view-only dashboard</div>
+          <div class="transform-row">You keep coaching. The system runs the pipeline.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── What You Get ──────────────────────────────────────── -->
+<section class="section" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">The Discovery-Call Pipeline</div>
+      <h2>Every lead caught, booked, and<br>followed up with, automatically.</h2>
+      <p>A complete, done-for-you system built around one job: turning inbound interest into booked calls without you lifting a finger.</p>
+    </div>
+
+    <div class="pipeline-grid">
+      <div class="pipeline-card fade-up delay-1">
+        <div class="pipeline-num">01</div>
+        <h3>Inbound lead capture</h3>
+        <p>Every lead: form, DM, or ad, lands in one system instantly. No manual entry, nothing falling between tools.</p>
+      </div>
+      <div class="pipeline-card fade-up delay-2">
+        <div class="pipeline-num">02</div>
+        <h3>Instant lead response</h3>
+        <p>An automated, on-brand first reply goes out within 60 seconds of any inquiry. You're first in the inbox, every time.</p>
+      </div>
+      <div class="pipeline-card fade-up delay-3">
+        <div class="pipeline-num">03</div>
+        <h3>Booking automation</h3>
+        <p>Self-serve scheduling that kills the back-and-forth. Leads book themselves straight onto your calendar.</p>
+      </div>
+      <div class="pipeline-card fade-up delay-1">
+        <div class="pipeline-num">04</div>
+        <h3>No-show recovery</h3>
+        <p>The moment a call is missed, an automatic SMS + email goes out with a rebook link, within 5 minutes.</p>
+      </div>
+      <div class="pipeline-card fade-up delay-2">
+        <div class="pipeline-num">05</div>
+        <h3>Post-call nurture</h3>
+        <p>Leads who didn't close drop into an automated follow-up sequence, so nothing goes cold while you move on.</p>
+      </div>
+      <div class="pipeline-card fade-up delay-3">
+        <div class="pipeline-num">06</div>
+        <h3>One system of record</h3>
+        <p>Calendly + email + spreadsheets + sticky notes → replaced by a single view-only pipeline. You see everything. You manage nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ───────────────────────────────────────── -->
+<section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">How It Works</div>
+      <h2>Live in 14 days. Here's the path.</h2>
+      <p>You stay in coaching mode. I build the system around your offer and your channels.</p>
+    </div>
+
+    <div class="steps-grid-4">
+      <div class="step fade-up delay-1">
+        <div class="step-number">01</div>
+        <h3>Map</h3>
+        <p>Day 1–2. We map your exact lead flow: where leads come from, where they're leaking, and what "booked" should look like end to end.</p>
+      </div>
+      <div class="step fade-up delay-2">
+        <div class="step-number">02</div>
+        <h3>Build</h3>
+        <p>Day 3–11. I build the full pipeline around your offer and channels. I only need you for quick approvals.</p>
+      </div>
+      <div class="step fade-up delay-3">
+        <div class="step-number">03</div>
+        <h3>Launch</h3>
+        <p>Day 12–14. We go live, test every path with real leads, and hand you a system that's already working.</p>
+      </div>
+      <div class="step fade-up delay-4">
+        <div class="step-number">04</div>
+        <h3>Optimize</h3>
+        <p>Ongoing, optional. We tune sequences against real data and expand into group funnels, referrals, and reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Proof ──────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Proof</div>
+      <h2>Real coaches. Real numbers.<br>Real timeframes.</h2>
+    </div>
+
+    <div class="proof-grid">
+      <div class="proof-card fade-up delay-1">
+        <h4>Jessica</h4>
+        <p>Automated her proposal process: writing time dropped from <strong>3 hours to 5 minutes</strong>, and she closed <strong>$2k within a week</strong> of going live.</p>
+      </div>
+      <div class="proof-card fade-up delay-2">
+        <h4>Mij</h4>
+        <p>Made <strong>$10k in two weeks</strong> after switching on the follow-up flows. Revenue recovered from leads that were already there, just slipping through.</p>
+      </div>
+      <div class="proof-card fade-up delay-3">
+        <h4>Mariana</h4>
+        <p>Automated meeting reminders freed up hours of admin and a real chunk of mental overhead every week.</p>
+      </div>
+      <div class="proof-card fade-up delay-4">
+        <h4>Timeless</h4>
+        <p>Cut <strong>20 hours a week</strong> off outreach while keeping the exact same outcomes.</p>
+      </div>
+    </div>
+
+    <p class="fade-up" style="text-align:center; max-width:560px; margin: 40px auto 0; color: var(--text-2); font-size: 1.02rem;">
+      Across 30+ teams, the pattern holds: hours of manual work removed, outcomes kept fully intact.
+    </p>
+  </div>
+</section>
+
+<!-- ── Who This Is For ────────────────────────────────────── -->
+<section class="section" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Fit Check</div>
+      <h2>Built for coaches with real inbound,<br>not beginners.</h2>
+    </div>
+
+    <div class="fit-grid">
+      <div class="fit-col yes fade-up delay-1">
+        <h3>This is for you if</h3>
+        <ul class="fit-list">
+          <li>You're a coach with a <strong>$2k+ offer</strong> (1:1 or group) that's already proven</li>
+          <li>You have <strong>15–50 active clients</strong> and consistent inbound leads coming in</li>
+          <li>You're active where your audience is: Instagram, LinkedIn, YouTube, Skool</li>
+          <li>You'll actually <em>use</em> the system day to day (solo or small team)</li>
+          <li>You know leads are slipping, and you're done being the one who chases them</li>
+        </ul>
+      </div>
+      <div class="fit-col no fade-up delay-2">
+        <h3>This isn't for you if</h3>
+        <ul class="fit-list">
+          <li>You're pre-revenue or still figuring out your offer</li>
+          <li>All your clients come from referrals and you have no inbound to catch</li>
+          <li>You want to buy a tool and disappear — this works because it's built around <em>your</em> flow</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="fade-up" style="text-align:center; max-width:520px; margin: 40px auto 0; color: var(--text-2); font-size: 1.02rem;">
+      If you're in the first list, the leak is costing you more than the fix. Let's stop it.
+    </p>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Common Questions</div>
+      <h2>Things coaches ask before booking.</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <button class="faq-question">
+          Will automated follow-up feel robotic to my leads?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No, that's the whole point of building it around you. The messages sound like you, go out at the right moments, and hand off to a real conversation fast. Leads feel responded to, not processed. Done right, instant follow-up feels like great service, not a bot.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-up delay-1">
+        <button class="faq-question">
+          Do I have to switch CRMs or learn new software?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No. The system runs in the background and your CRM becomes view-only — a place you look, not a job you do. If you're already on GHL or similar, even better; if not, I set the whole thing up.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-up delay-2">
+        <button class="faq-question">
+          I'm not technical. Is this going to be a headache to run?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">It's done-for-you. I build it, launch it, and hand you a system that's already working, plus a plain-English walkthrough. You don't maintain any systems yourself.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-up delay-3">
+        <button class="faq-question">
+          How fast do I actually see this working?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">The core pipeline goes live in 14 days from kickoff. From that point, every new lead is being answered in under 60 seconds and booked automatically.</div>
+        </div>
+      </div>
+      <div class="faq-item fade-up delay-4">
+        <button class="faq-question">
+          What do you actually promise?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Every lead answered within 60 seconds and booked without back-and-forth. That's what the system controls, and that's what I stand behind. As we build proof cases with hard revenue numbers, that promise gets even more specific.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Big CTA ────────────────────────────────────────────── -->
+<section class="lp-cta" id="book">
+  <div class="container">
+    <div class="badge badge-green fade-up" style="margin-bottom: 1.4rem; justify-content: center;">14 days to live</div>
+    <h2 class="fade-up delay-1">If a missed follow-up costs you<br>a $2k client, you can't afford a slow one.</h2>
+    <p class="fade-up delay-2" style="font-size: 1.1rem; color: var(--text-2); max-width: 560px; margin: 0 auto 2.4rem;">
+      Every day the leak stays open, good leads are booking with whoever replied first. In 14 days, that could be your system — first in every inbox, chasing every no-show, booking calls while you coach.
+    </p>
+    <a href="contact.html" class="btn btn-primary fade-up delay-3" style="font-size: 1.1rem; padding: 18px 40px;">
+      Book a discovery call
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <p class="hero-secondary fade-up delay-4">
+      Or <a href="contact.html">grab the free Lead Leak Audit</a> and see exactly where your leads are leaking →
+    </p>
+  </div>
+</section>
+
+<!-- ── Minimal Footer ─────────────────────────────────────── -->
+<footer style="border-top: 1px solid var(--border); padding: 32px 0;">
+  <div class="container">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <a href="index.html" class="nav-logo" aria-label="Fluence home"><img src="assets/Fluence logo black.png" alt="Fluence" class="nav-logo-img" /></a>
+      <div style="font-size: 0.82rem; color: var(--text-3); display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="index.html" style="color: var(--text-3); transition: color 0.2s;">Home</a>
+        <a href="privacy-policy.html" style="color: var(--text-3); transition: color 0.2s;">Privacy Policy</a>
+        <a href="cookie-policy.html" style="color: var(--text-3); transition: color 0.2s;">Cookie Policy</a>
+        <a href="impressum.html" style="color: var(--text-3); transition: color 0.2s;">Imprint</a>
+        <button type="button" class="cookie-settings-link" data-cookie-settings>Cookie settings</button>
+      </div>
+      <span style="font-size: 0.8rem; color: var(--text-3);">© 2026 Fluence Agency</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('lpNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+<script src="js/cookie-consent.js" defer></script>
+</body>
+</html>
