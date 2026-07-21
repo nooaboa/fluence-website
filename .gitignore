@@ -1,2 +1,9 @@
 .env
 .netlify/
+.DS_Store
+audit/
+lead-leak-audit/node_modules/
+lead-leak-audit/dist/
+lead-leak-audit/.responsive-check/
+
+
