@@ -2,6 +2,12 @@
   command = "cd lead-leak-audit && npm ci && npm run build && rm -rf ../audit && mv dist ../audit"
   publish = "."
 
+# Vite inlines VITE_* at build time — these must be set here (or in the
+# Netlify UI). Putting the URL only in .env.example does nothing for deploys.
+[build.environment]
+  VITE_N8N_WEBHOOK_URL = "https://n8n.srv922487.hstgr.cloud/webhook/lead-leak-audit"
+  VITE_BOOKING_URL = "https://cal.com/nooa-adams-fzrvip/strategy"
+
 [[redirects]]
   from = "/api/consent"
   to = "/.netlify/functions/consent"
